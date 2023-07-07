@@ -2,7 +2,16 @@ import React from 'react'
 
 function Header() {
   return (
-    <div>Header</div>
+<nav>
+  <div>Logo</div>
+  <div>
+    <ul>
+      <li>page</li>
+      <li>page</li>
+      <li>page</li>
+    </ul>
+  </div>
+</nav>
   )
 }
 

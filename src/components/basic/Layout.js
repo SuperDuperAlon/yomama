@@ -3,13 +3,11 @@ import Header from "./Header";
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <main className="min-h-screen min-w-screen flex flex-col px-16">
       <Header />
-      <main className="min-h-screen text-red-400">
-        {children}
-      </main>
+      {children}
       <Footer />
+    </main>
 
-    </div>
   );
 }
