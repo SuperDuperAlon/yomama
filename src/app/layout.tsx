@@ -14,10 +14,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
-        <Footer />
+      <body className=' bg-red-100'>
+        <main className='index-layout'>
+
+
+          <Header />
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   )
