@@ -25,13 +25,17 @@ function Admin() {
 
   if (!flowers) return <div>There are no flowers</div>
   else return (
-    <div className="bg-red-200">
-      {/* {flowers.map((flower) => (
-        <div key={flower._id} className="capitalize">{flower.name} ${flower.price}
-          <button onClick={() => {console.log('remove')}}>X</button>
-          <button onClick={() => {console.log('edit')}}>Edit</button>
-        </div>
-      ))} */}
+    <div className="">
+      <div>
+
+
+        {/*Filtering*/}
+<input type="text" />
+
+
+        {/*Add Task*/}
+        <button>Add</button>
+      </div>
       <table>
         <thead>
           <tr>
@@ -52,6 +56,7 @@ function Admin() {
               <td>{flower.name}</td>
               <td>{flower.price}</td>
               <td><button onClick={() => {onRemoveFlower(flower._id)}}>Remove</button> </td>
+              {/*Edit Task*/}
               <td><button onClick={() => {console.log('edit')}}>Edit</button></td>
             </tr>
           ))}

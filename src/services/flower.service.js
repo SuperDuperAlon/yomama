@@ -52,7 +52,7 @@ function remove(flowerId) {
 }
 
 function save(flower) {
-    if (flower.id) {
+    if (flower._id) {
         return storageService.put(STORAGE_KEY, flower)
     } else {
         return storageService.post(STORAGE_KEY, flower)
