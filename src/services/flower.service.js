@@ -7,7 +7,7 @@ _createFlowers()
 export const flowerService = {
     query,
     // get,
-    // remove,
+    remove,
     // save,
     // getEmptyFlower,
     // getDefaultFilter,

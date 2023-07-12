@@ -16,6 +16,13 @@ function Admin() {
     return retrievedFlowers
   }
 
+  function onRemoveFlower(flowerId) {
+    console.log(flowerId);
+    flowerService.remove(flowerId)
+    setFlowers(flowers)
+    loadFlowers()
+  }
+
   if (!flowers) return <div>There are no flowers</div>
   else return (
     <div className="bg-red-200">
@@ -44,7 +51,7 @@ function Admin() {
               <td>{flower._id}</td>
               <td>{flower.name}</td>
               <td>{flower.price}</td>
-              <td><button onClick={() => {console.log('remove')}}>Remove</button> </td>
+              <td><button onClick={() => {onRemoveFlower(flower._id)}}>Remove</button> </td>
               <td><button onClick={() => {console.log('edit')}}>Edit</button></td>
             </tr>
           ))}
