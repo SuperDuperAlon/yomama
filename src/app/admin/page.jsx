@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { flowerService } from '@/services/flower.service'
+import Link from "next/link";
 
 function Admin() {
   const [flowers, setFlowers] = useState([])
@@ -57,7 +58,7 @@ function Admin() {
               <td>{flower.price}</td>
               <td><button onClick={() => {onRemoveFlower(flower._id)}}>Remove</button> </td>
               {/*Edit Task*/}
-              <td><button onClick={() => {console.log('edit')}}>Edit</button></td>
+              <td><button> <Link href="/admin/edit">Edit</Link> </button></td>
             </tr>
           ))}
         </tbody>
