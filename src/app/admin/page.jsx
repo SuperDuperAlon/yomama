@@ -54,8 +54,8 @@ function Admin() {
               <td>{idx + 1}</td>
               <td>Img</td>
               <td>{flower._id}</td>
-              <td>{flower.name}</td>
-              <td>{flower.price}</td>
+              <td className="capitalize">{flower.name}</td>
+              <td>${flower.price}</td>
               <td><button onClick={() => {onRemoveFlower(flower._id)}}>Remove</button> </td>
               {/*Edit Task*/}
               <td><button> <Link href="/admin/edit">Edit</Link> </button></td>
