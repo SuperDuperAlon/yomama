@@ -93,37 +93,40 @@ function _makeId(length = 5) {
 
 
 function _createFlowers() {
-    let flowers = storageService.loadFromStorage(STORAGE_KEY)
-    console.log(flowers);
-    if (!flowers || !flowers.length) {
-        flowers = [
-            {
-                name: 'rose',
-                _id: _makeId(),
-                price: 20,
-            },
-            {
+    if (typeof window !== 'undefined') {
 
-                name: 'lilac',
-                _id: _makeId(),
-                price: 20,
-            },
-            {
+        let flowers = storageService.loadFromStorage(STORAGE_KEY)
+        console.log(flowers);
+        if (!flowers || !flowers.length) {
+            flowers = [
+                {
+                    name: 'rose',
+                    _id: _makeId(),
+                    price: 20,
+                },
+                {
 
-                name: 'lily',
-                _id: _makeId(),
-                price: 20,
-            },
-            {
+                    name: 'lilac',
+                    _id: _makeId(),
+                    price: 20,
+                },
+                {
 
-                name: 'orchid',
-                _id: _makeId(),
-                price: 20,
-            }
+                    name: 'lily',
+                    _id: _makeId(),
+                    price: 20,
+                },
+                {
 
-        ]
-        flowers.forEach(flower => {
-        })
-        storageService.saveToStorage(STORAGE_KEY, flowers)
+                    name: 'orchid',
+                    _id: _makeId(),
+                    price: 20,
+                }
+
+            ]
+            flowers.forEach(flower => {
+            })
+            storageService.saveToStorage(STORAGE_KEY, flowers)
+        }
     }
 }
