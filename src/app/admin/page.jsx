@@ -19,8 +19,8 @@ function Admin() {
 
  async function onRemoveFlower(flowerId) {
     await flowerService.remove(flowerId)
-    setFlowers(flowers)
-    loadFlowers()
+    const newList = await flowerService.query()
+    setFlowers(newList)
   }
 
   if (!flowers) return <div>There are no flowers</div>
