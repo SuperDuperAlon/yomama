@@ -37,7 +37,7 @@ function Admin() {
 
 
         {/*Add Task*/}
-        <button>Add</button>
+        <button onClick={() => console.log('add new flower')}>Add</button>
       </div>
     < AdminFlowerList flowers={flowers} onRemoveFlower={onRemoveFlower}/>
     </div>

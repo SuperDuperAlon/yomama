@@ -20,11 +20,10 @@ const AdminFlowerList = ({flowers, onRemoveFlower}) => {
           <td>{idx + 1}</td>
           <td>Img</td>
           <td>{flower._id}</td>
-          <td className="capitalize">{flower.name}</td>
-          <td>${flower.price}</td>
+          <td className="capitalize">{flower.name} <button onClick={() => console.log('edit')}>edit</button></td>
+          <td><button onClick={() => console.log('-1')}>-</button>${flower.price}<button onClick={() => console.log('+1')}>+</button></td>
           <td><button onClick={() => {onRemoveFlower(flower._id)}}>Remove</button> </td>
           {/*Edit Task*/}
-          <td><button> <Link href="/admin/edit">Edit</Link> </button></td>
         </tr>
       ))}
     </tbody>
