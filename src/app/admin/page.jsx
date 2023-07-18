@@ -17,11 +17,10 @@ function Admin() {
     return retrievedFlowers
   }
 
-  function onRemoveFlower(flowerId) {
-    console.log(flowerId);
+ async function onRemoveFlower(flowerId) {
     flowerService.remove(flowerId)
-    setFlowers(flowers)
     loadFlowers()
+    setFlowers(flowers)
   }
 
   if (!flowers) return <div>There are no flowers</div>
