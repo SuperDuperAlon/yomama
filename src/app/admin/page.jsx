@@ -18,7 +18,7 @@ function Admin() {
   }
 
  async function onRemoveFlower(flowerId) {
-    flowerService.remove(flowerId)
+    await flowerService.remove(flowerId)
     loadFlowers()
     setFlowers(flowers)
   }
