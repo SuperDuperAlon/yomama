@@ -74,6 +74,8 @@ function getDefaultFilter() {
 // }
 
 
+// Private functions
+
 function _saveFlowersToStorage(flowers) {
     storageService.saveToStorage(STORAGE_KEY, flowers)
 }
@@ -82,21 +84,9 @@ function _loadFlowersFromStorage() {
     return storageService.loadFromStorage(STORAGE_KEY)
 }
 
-function _makeId(length = 5) {
-    var text = ''
-    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-    for (var i = 0; i < length; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length))
-    }
-    return text
-}
-
-
 function _createFlowers() {
     if (typeof window !== 'undefined') {
-
         let flowers = storageService.loadFromStorage(STORAGE_KEY)
-        console.log(flowers);
         if (!flowers || !flowers.length) {
             flowers = [
                 {
@@ -130,3 +120,12 @@ function _createFlowers() {
         }
     }
 }
+
+    function _makeId(length = 5) {
+        var text = ''
+        var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+        for (var i = 0; i < length; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length))
+        }
+        return text
+    }
