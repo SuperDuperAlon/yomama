@@ -11,7 +11,7 @@ const AdminFlowerList = ({flowers, onRemoveFlower}) => {
         <th>ID</th>
         <th>Name</th>
         <th>Price</th>
-        <th colSpan="2">Actionsssss</th>
+        <th>Actionsssss</th>
       </tr>
     </thead>
     <tbody>
