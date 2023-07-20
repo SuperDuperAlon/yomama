@@ -2,7 +2,15 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer>footer</footer>
+    <footer>
+      <h3>
+
+        Made by Alon Mlievski
+      </h3>
+
+
+
+    </footer>
   )
 }
 
