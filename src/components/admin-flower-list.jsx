@@ -1,7 +1,15 @@
 import Link from 'next/link'
 import React from 'react'
+import { databases, Query } from "@/storage/storage";
 
 const AdminFlowerList = ({flowers, onRemoveFlower}) => {
+
+  const getDocuments = databases.listDocuments(process.env.DATABASE_ID, process.env.COLLECTION_ID, [Query.equal('name')])
+  getDocuments.then(function (response) {
+    console.log(response);
+}, function (error) {
+    console.log(error);
+});
   return (
     <table>
     <thead>
