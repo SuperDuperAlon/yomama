@@ -4,21 +4,6 @@ import { databases, Query } from "@/storage/storage";
 
 const AdminFlowerList = ({flowers, onRemoveFlower}) => {
 
-  const getDocuments = async() => 
-
-  async function getDocuments() {
-    const data = await databases.listDocuments(process.env.DATABASE_ID, process.env.COLLECTION_ID, [Query.equal('name')])
-    return data
-  }
-
-try {
-   const data = getDocuments()
-   console.log(data);
-} catch (err) {
-  console.log(err);
-}
-
-
   return (
     <table>
     <thead>
