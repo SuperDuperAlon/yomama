@@ -2,19 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.index-layout {
-    display: grid;
-    grid-template-columns: 1fr 800px 1fr;
 
-    >* {
-        grid-column: 2;
-    }
+@import '@/styles/layout/layout.css';
 
-    .full {
-        grid-column: 1/-1;
 
-    }
-}
 
 td, th {
     padding: 3px;
