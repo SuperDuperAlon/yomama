@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import React from 'react'
-import { databases, Query } from "@/storage/storage";
+import React, { useEffect } from 'react'
+import {getData} from '@/lib/getdata'
+
 
 const AdminFlowerList = ({flowers, onRemoveFlower}) => {
-
   return (
     <table>
     <thead>

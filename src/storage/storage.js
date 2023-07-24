@@ -1,20 +1,18 @@
-import { Client, Account, ID, Databases, Storage, Query } from "appwrite";
+// import { Client, Databases } from "appwrite";
 
-const client = new Client()
-    .setEndpoint("https://cloud.appwrite.io/v1")
-    .setProject(process.env.PROJECT_ID);
+// const client = new Client();
 
-const databases = new Databases(client);
-const storage = new Storage(client);
-const account = new Account(client);
+// const databases = new Databases(client);
 
-console.log(process.env.DATABASE_ID);
+// client
+//     .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
+//     .setProject(process.env.NEXT_PUBLIC_PROJECT_ID) // Your project ID
+//     ;
 
-// try {
-//     const something = databases.listDocuments(process.env.DATABASE_ID, process.env.COLLECTION_ID)
-//     console.log(something);
-// } catch (err) {
-//     console.log(err);
-// }
+// const promise = databases.listDocuments(process.env.NEXT_PUBLIC_DATABASE_ID, process.env.NEXT_PUBLIC_COLLECTION_ID);
 
-export { client, account, databases, storage, ID, Query };
+// promise.then(function (response) {
+//     console.log(response); // Success
+// }, function (error) {
+//     console.log(error); // 
+// })
