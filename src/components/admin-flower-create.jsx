@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {appService} from '../../appwrite'
 
 const AdminFlowerCreate = () => {
         const [flowerData, setFlowerData] = useState({
@@ -11,20 +12,19 @@ const AdminFlowerCreate = () => {
           setFlowerData({ ...flowerData, [name]: value });
         };
       
-        const handleSubmit = (event) => {
+        const handleSubmit = async (event) => {
           event.preventDefault();
       
-          // Create a new flower object
-          const newFlower = {
-            name: flowerData.name,
-            price: parseInt(flowerData.price),
-          };
+          try {
+            // Call the asynchronous function passing the flowerData as props
+            const response = await appService.create(flowerData);
+            console.log('New Flower Object:', response);
       
-          // Do whatever you want with the new flower object here
-          console.log('New Flower Object:', newFlower);
-      
-          // Optionally, you can reset the form after submission
-          setFlowerData({ name: '', color: '', price: 0 });
+            // Optionally, you can reset the form after successful submission
+            setFlowerData({ name: '', price: 0 });
+          } catch (error) {
+            console.error(error.message);
+          }
         };
 
         console.log(flowerData);
