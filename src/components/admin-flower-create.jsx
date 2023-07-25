@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {appService} from '../../appwrite'
 
-const AdminFlowerCreate = () => {
+const AdminFlowerCreate = ({loadFlowers}) => {
         const [flowerData, setFlowerData] = useState({
           name: '',
           price: 20,
@@ -19,6 +19,7 @@ const AdminFlowerCreate = () => {
             // Call the asynchronous function passing the flowerData as props
             const response = await appService.create(flowerData);
             console.log('New Flower Object:', response);
+            loadFlowers()
       
             // Optionally, you can reset the form after successful submission
             setFlowerData({ name: '', price: 0 });

@@ -24,7 +24,7 @@ const AdminFlowerList = ({flowers, onRemoveFlower}) => {
           <td>{flower.$id}</td>
           <td className="capitalize">{flower.name} <button onClick={() => console.log('edit')}>edit</button></td>
           <td><button onClick={() => console.log('-1')}>-</button>${flower.price}<button onClick={() => console.log('+1')}>+</button></td>
-          <td><button onClick={() => {onRemoveFlower(flower._id)}}>Remove</button> </td>
+          <td><button onClick={() => {onRemoveFlower(flower.$id)}}>Remove</button> </td>
           {/*Edit Task*/}
         </tr>
       ))}

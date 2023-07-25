@@ -41,8 +41,18 @@ async function create(newFlower) {
   }
 }
 
+async function remove(id) {
+  try {
+    await databases.deleteDocument(process.env.NEXT_PUBLIC_DATABASE_ID,
+      process.env.NEXT_PUBLIC_COLLECTION_ID, id);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 
 export const appService = {
   query,
-  create
+  create,
+  remove
 }

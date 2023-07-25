@@ -24,8 +24,8 @@ function Admin() {
   }
 
  async function onRemoveFlower(flowerId) {
-    await flowerService.remove(flowerId)
-    const newList = await flowerService.query()
+    await appService.remove(flowerId)
+    const newList = await appService.query()
     setFlowers(newList)
   }
 
@@ -38,9 +38,7 @@ function Admin() {
 
 
         {/*Add Task*/}
-
-        <AdminFlowerCreate />
-
+        <AdminFlowerCreate loadFlowers={loadFlowers} />
       </div>
     < AdminFlowerList flowers={flowers} onRemoveFlower={onRemoveFlower}/>
     </div>
