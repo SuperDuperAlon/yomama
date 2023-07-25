@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { flowerService } from '@/services/flower.service'
+import {appService} from '../../../appwrite'
 
 import AdminFlowerList from '@/components/admin-flower-list'
 
@@ -14,8 +15,9 @@ function Admin() {
     loadFlowers()
   }, [])
 
-  function loadFlowers() {
-    const retrievedFlowers = flowerService.query()
+  async function loadFlowers() {
+    const retrievedFlowers = await appService.query()
+    console.log(retrievedFlowers);
     setFlowers(retrievedFlowers)
     return retrievedFlowers
   }
