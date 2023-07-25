@@ -5,6 +5,7 @@ import { flowerService } from '@/services/flower.service'
 import {appService} from '../../../appwrite'
 
 import AdminFlowerList from '@/components/admin-flower-list'
+import AdminFlowerCreate from '@/components/admin-flower-create'
 
 import Link from "next/link";
 
@@ -32,14 +33,14 @@ function Admin() {
   else return (
     <div className="">
       <div>
-
-
         {/*Filtering*/}
 <input type="text" />
 
 
         {/*Add Task*/}
-        <button onClick={() => console.log('add new flower')}>Add</button>
+
+        <AdminFlowerCreate />
+
       </div>
     < AdminFlowerList flowers={flowers} onRemoveFlower={onRemoveFlower}/>
     </div>
