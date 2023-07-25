@@ -18,7 +18,7 @@ const AdminFlowerList = ({flowers, onRemoveFlower}) => {
     </thead>
     <tbody>
       {flowers.map((flower, idx) => (
-        <tr key={flower.idx}>
+        <tr key={flower.$id}>
           <td>{idx + 1}</td>
           <td>Img</td>
           <td>{flower.$id}</td>
