@@ -16,12 +16,10 @@ const AdminFlowerCreate = ({loadFlowers}) => {
           event.preventDefault();
       
           try {
-            // Call the asynchronous function passing the flowerData as props
             const response = await appService.create(flowerData);
             console.log('New Flower Object:', response);
             loadFlowers()
       
-            // Optionally, you can reset the form after successful submission
             setFlowerData({ name: '', price: 20 });
           } catch (error) {
             console.error(error.message);
@@ -44,16 +42,6 @@ const AdminFlowerCreate = ({loadFlowers}) => {
                   required
                 />
               </label>
-              {/* <label>
-                Color:
-                <input
-                  type="text"
-                  name="color"
-                  value={flowerData.color}
-                  onChange={handleInputChange}
-                  required
-                />
-              </label> */}
               <label>
                 Price:
                 <input
