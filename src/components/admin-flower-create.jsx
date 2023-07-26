@@ -22,7 +22,7 @@ const AdminFlowerCreate = ({loadFlowers}) => {
             loadFlowers()
       
             // Optionally, you can reset the form after successful submission
-            setFlowerData({ name: '', price: 0 });
+            setFlowerData({ name: '', price: 20 });
           } catch (error) {
             console.error(error.message);
           }
