@@ -10,8 +10,8 @@ function Header() {
         <div>
           <ul className='flex flex-row py-8'>
             <li className='px-2'><Link href='/'>Home</Link></li>
-            <li className='px-2'><Link href='/'>About</Link></li>
-            <li className='px-2'><Link href='/'>Cart</Link></li>
+            <li className='px-2'><Link href='#'>About</Link></li>
+            <li className='px-2'><Link href='#'>Cart</Link></li>
             <li className='px-2'><Link href='/admin'>Admin</Link></li>
           </ul>
         </div>
