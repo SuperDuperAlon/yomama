@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { flowerService } from '@/services/flower.service'
-import {appService} from '../../../appwrite'
+import { appService } from '../../../appwrite'
 
 import AdminFlowerList from '@/components/admin-flower-list'
 import AdminFlowerCreate from '@/components/admin-flower-create'
@@ -23,7 +23,7 @@ function Admin() {
     return retrievedFlowers
   }
 
- async function onRemoveFlower(flowerId) {
+  async function onRemoveFlower(flowerId) {
     await appService.remove(flowerId)
     const newList = await appService.query()
     setFlowers(newList)
@@ -31,16 +31,16 @@ function Admin() {
 
   if (!flowers) return <div>There are no flowers</div>
   else return (
-    <div className="">
-      <div>
-        {/*Filtering*/}
-<input type="text" />
-
-
-        {/*Add Task*/}
+    <div className="flex">
+      <div className="flex flex-col">
         <AdminFlowerCreate loadFlowers={loadFlowers} />
+        {/*Filtering*/}
+        <input type="text" />
+
       </div>
-    < AdminFlowerList flowers={flowers} onRemoveFlower={onRemoveFlower}/>
+      <div>
+      < AdminFlowerList flowers={flowers} onRemoveFlower={onRemoveFlower} />
+      </div>
     </div>
   )
 }

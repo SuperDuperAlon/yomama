@@ -29,7 +29,7 @@ const AdminFlowerCreate = ({loadFlowers}) => {
         console.log(flowerData);
       
         return (
-          <div>
+          <div className='flex flex-row'>
             <h2>Create a New Flower</h2>
             <form onSubmit={handleSubmit}>
               <label>
