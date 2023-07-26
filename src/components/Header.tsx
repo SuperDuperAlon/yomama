@@ -6,7 +6,7 @@ function Header() {
 
     <nav className='bg-blue-100 index-layout full' >
       <div className='flex flex-row justify-between' >
-        <div className='flex items-center bold'>Yomama</div>
+        <div className='flex items-center bold logo text-3xl'>Yomama</div>
         <div>
           <ul className='flex flex-row py-8'>
             <li className='px-2'><Link href='/'>Home</Link></li>

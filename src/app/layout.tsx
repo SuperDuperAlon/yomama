@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className=' bg-red-100'>
+      <body className=''>
         <main className='index-layout'>
 
 

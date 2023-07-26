@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 @import '@/styles/layout/layout.css';
 
@@ -10,4 +11,8 @@
 td, th {
     padding: 3px;
     margin: 1px;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
 }
