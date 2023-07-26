@@ -16,11 +16,11 @@ export default function RootLayout({
     <html lang="en">
       <body className=''>
         <main className='index-layout'>
-
-
-          <Header />
+        <Header />
+        <section className='min-h-[80vh]'>
           {children}
-          <Footer />
+        </section>
+        <Footer />
         </main>
       </body>
     </html>
