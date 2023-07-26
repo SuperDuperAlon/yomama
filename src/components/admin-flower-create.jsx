@@ -19,21 +19,17 @@ const AdminFlowerCreate = ({ loadFlowers }) => {
       const response = await appService.create(flowerData);
       console.log('New Flower Object:', response);
       loadFlowers()
-
       setFlowerData({ name: '', price: 20 });
     } catch (error) {
       console.error(error.message);
     }
   };
 
-  console.log(flowerData);
-
   return (
     <div className='flex flex-col'>
       <h2>Create a New Flower</h2>
       <div>
-        <form onSubmit={handleSubmit} >
-
+        <form onSubmit={handleSubmit} className='flex flex-col'>
           <label >
             Name:
             <input
