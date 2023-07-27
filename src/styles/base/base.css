@@ -1,0 +1,9 @@
+td, th {
+    padding: 3px;
+    margin: 1px;
+}
+
+th {
+    font-weight: bold;
+    background-color: azure;
+}

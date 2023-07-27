@@ -4,15 +4,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+/* Layout */
 @import '@/styles/layout/layout.css';
 
+/* Base */
+@import '@/styles/base/base.css';
+@import '@/styles/base/main-page.css';
+
+/* Components */
+@import '@/styles/components/header.css';
+@import '@/styles/components/admin-form.css';
+@import '@/styles/components/admin-page.css';
 
 
-td, th {
-    padding: 3px;
-    margin: 1px;
-}
 
-.logo {
-    font-family: 'Pacifico', cursive;
-}
+
+

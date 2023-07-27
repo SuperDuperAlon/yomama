@@ -17,7 +17,7 @@ export default function RootLayout({
       <body className=''>
         <main className='index-layout'>
         <Header />
-        <section className='min-h-[80vh]'>
+        <section className='main-page'>
           {children}
         </section>
         <Footer />

@@ -26,8 +26,8 @@ const AdminFlowerCreate = ({ loadFlowers }) => {
   };
 
   return (
-    <div className='flex flex-col'>
-      <h2>Create a New Flower</h2>
+    <div className='flex flex-col admin-form'>
+      <h2 className='justify-around'>Create a New Flower</h2>
       <div>
         <form onSubmit={handleSubmit} className='flex flex-col'>
           <label >

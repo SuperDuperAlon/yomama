@@ -31,7 +31,7 @@ function Admin() {
 
   if (!flowers) return <div>There are no flowers</div>
   else return (
-    <div className="flex">
+    <div className="flex justify-between">
       <div className="flex flex-col">
         <AdminFlowerCreate loadFlowers={loadFlowers} />
         {/*Filtering*/}
