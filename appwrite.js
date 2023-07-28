@@ -50,9 +50,19 @@ async function remove(id) {
   }
 }
 
+async function update(id) {
+  try {
+    await databases.updateDocument(process.env.NEXT_PUBLIC_DATABASE_ID,
+      process.env.NEXT_PUBLIC_COLLECTION_ID, id);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 
 export const appService = {
   query,
   create,
-  remove
+  remove,
+  update
 }

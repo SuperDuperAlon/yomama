@@ -18,7 +18,6 @@ function Admin() {
 
   async function loadFlowers() {
     const retrievedFlowers = await appService.query()
-    console.log(retrievedFlowers);
     setFlowers(retrievedFlowers)
     return retrievedFlowers
   }
