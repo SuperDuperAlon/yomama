@@ -1,20 +1,30 @@
 'use client'
 
 import { useParams } from 'next/navigation'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { appService } from '../../../../appwrite'
 
 const Edit = () => {
 
+const [flower, setFlower] = useState(null)
+
   const params = useParams()
 
-  // useEffect(() => {
-  //   const id = params.$id
-  // }, [])
+  useEffect(() => {
+    loadFlower()
+  }, [])
 
-  
-  if (!params.$id) return <div>no id</div>
+  async function loadFlower() {
+    const retreivedFlower = await appService.getById(params.$id)
+    setFlower(retreivedFlower)
+    return retreivedFlower
+  }
+
+  console.log(flower);
+
+  if (!params.$id && flower) return <div>no id</div>
   else return (
-    <div>Edit
+    <div>Name {flower.name}
       <div>Dynamic ID: {params.$id}</div>;
     </div>
   )

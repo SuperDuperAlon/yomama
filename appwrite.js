@@ -19,6 +19,16 @@ async function query() {
   }
 }
 
+async function getById(id) {
+  try {
+    const query = await databases.getDocument(process.env.NEXT_PUBLIC_DATABASE_ID, process.env.NEXT_PUBLIC_COLLECTION_ID, id);
+    const data = query.documents
+    return data
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 async function create(newFlower) {
   try {
     // Create a new flower object
@@ -64,5 +74,6 @@ export const appService = {
   query,
   create,
   remove,
-  update
+  update,
+  getById
 }
