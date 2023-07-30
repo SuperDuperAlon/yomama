@@ -4,15 +4,23 @@ import React from 'react'
 function Header() {
   return (
     <header className='index-layout full'>
-      <div className='flex justify-between flex-row'>
+      <div className='flex justify-between flex-row top-header'>
         <div className="logo">Yomama</div>
         <div>
-          <input type="text" className=''/>
+          <input type="text" className='' />
         </div>
         <div className='flex flex-row'>
           <div>user button</div>
           <div>Fav</div>
           <div>Cart</div>
+        </div>
+      </div>
+      <div className='break-line full'></div>
+      <div className='bottom-header'>
+        <div>
+          <div>Catalog</div>
+          <div>About</div>
+          <div>Contact</div>
         </div>
       </div>
 

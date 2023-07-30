@@ -1,3 +1,14 @@
+header {
+}
+
+.top-header, .bottom-header {
+    padding: 2rem 0
+}
+
+.break-line {
+    border-bottom: 2px solid #eee;
+}
+
 .logo {
-    font-family: 'cinzel'
+    font-family: 'cinzel'; font-size: 2rem;
 }
