@@ -7,6 +7,9 @@
 /* Layout */
 @import '@/styles/layout/layout.css';
 
+/* Setup */
+@import '@/styles/setup/typography.css';
+
 /* Base */
 @import '@/styles/base/base.css';
 @import '@/styles/base/main-page.css';
