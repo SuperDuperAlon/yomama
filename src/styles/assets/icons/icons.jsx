@@ -12,5 +12,4 @@ export const icons = {
     heartIcon,
     shoppingIcon,
     magnifyingGlassIcon
-
 }
