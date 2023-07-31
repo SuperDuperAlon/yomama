@@ -1,6 +1,6 @@
 .index-layout {
     display: grid;
-    grid-template-columns: 1fr 800px 1fr;
+    grid-template-columns: 40px 1fr 40px;
 
     >* {
         grid-column: 2;
