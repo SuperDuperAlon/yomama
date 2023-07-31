@@ -5,13 +5,13 @@ import { icons } from '@/styles/assets/icons/icons'
 
 function Header() {
 
-  const { userIcon, shoppingIcon, heartIcon } = icons
+  const { userIcon, shoppingIcon, heartIcon, magnifyingGlassIcon } = icons
 
   return (
     <header className='index-layout full'>
       <div className='flex justify-between flex-row top-header'>
         <div className="logo">Yomama</div>
-        <input type="text" className='' placeholder='input'/>
+        <input type="text" className='main-input' placeholder={`${magnifyingGlassIcon} input`}/>
         <div className='flex flex-row header-nav'>
           <div>{userIcon}</div>
           <div>{shoppingIcon}</div>
