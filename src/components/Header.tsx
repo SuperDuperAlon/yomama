@@ -1,7 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
+import { icons } from '@/styles/assets/icons/icons'
+// import {AiOutlineUser, AiOutlineHeart, AiOutlineShopping} from 'react-icons/ai'
 
 function Header() {
+
+  const { userIcon, shoppingIcon, heartIcon } = icons
+  
   return (
     <header className='index-layout full'>
       <div className='flex justify-between flex-row top-header'>
@@ -10,9 +15,9 @@ function Header() {
           <input type="text" className='' />
         </div>
         <div className='flex flex-row'>
-          <div>user button</div>
-          <div>Fav</div>
-          <div>Cart</div>
+          <div className='nav-icon'>{userIcon}</div>
+          <div className='nav-icon'>{shoppingIcon}</div>
+          <div >{heartIcon}</div>
         </div>
       </div>
       <div className='break-line full'></div>
