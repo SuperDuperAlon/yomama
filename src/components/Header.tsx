@@ -1,31 +1,31 @@
 import Link from 'next/link'
 import React from 'react'
 import { icons } from '@/styles/assets/icons/icons'
-// import {AiOutlineUser, AiOutlineHeart, AiOutlineShopping} from 'react-icons/ai'
 
 function Header() {
 
-  const { userIcon, shoppingIcon, heartIcon, magnifyingGlassIcon } = icons
 
   return (
     <header className='index-layout full'>
       <div className='flex justify-between flex-row top-header'>
         <div className="logo">Yomama</div>
         <div className='flex flex-row main-input'>
-        {magnifyingGlassIcon}
+        {icons.magnifyingGlassIcon}
         <input type="text" className='' placeholder='Search'/>
         </div>
         <div className='flex flex-row header-nav'>
-          <div>{userIcon}</div>
-          <div>{shoppingIcon}</div>
-          <div>{heartIcon}</div>
+          <div>{icons.userIcon}</div>
+          <div>{icons.shoppingIcon}</div>
+          <div>{icons.heartIcon}</div>
         </div>
       </div>
       <div className='break-line full'></div>
       <div className='bottom-header flex'>
         <ul className='flex flex-row'>
-          <li>Catalog</li>
+          <li>Products</li>
           <li>About</li>
+          <li>Workshop</li>
+
           <li>Contact</li>
         </ul>
       </div>
