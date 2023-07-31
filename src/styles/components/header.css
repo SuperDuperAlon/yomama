@@ -1,7 +1,7 @@
 header {
 }
 
-.top-header, .bottom-header {
+.top-header{
     padding: 2rem 0;
 }
 
@@ -9,7 +9,12 @@ header {
     align-items: center;
 }
 
+.top-header > input {
+    margin: 2px;
+}
+
 .bottom-header {
+    padding: 1.5rem 0;
     justify-content: space-around;
     > * > li {
         margin: 0 0.25rem;
