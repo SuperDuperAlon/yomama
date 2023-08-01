@@ -23,17 +23,25 @@ function Footer() {
 
   const socialIcons = [
     {
-    img: 'fb'
-  },
+      img: 'fb'
+    },
     {
-    img: 'wa'
-  },
+      img: 'wa'
+    },
     {
-    img: 'gh'
-  },
+      img: 'gh'
+    },
     {
-    img: 'li'
-  },
+      img: 'li'
+    },
+  ]
+
+
+  const infromation = [
+    { content: 'terms of trade' },
+    { content: 'terms of trade' },
+    { content: 'terms of trade' },
+    { content: 'terms of trade' },
   ]
 
   return (
@@ -51,7 +59,7 @@ function Footer() {
             ))}
             <li className='flex flex-row'>alonmlievski@gmail.com</li>
             <li className='flex flex-row'>
-            {
+              {
                 socialIcons.map((icon, idx) => (
                   <div key={idx}>
                     <div>{icon.img}</div>
@@ -61,7 +69,15 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div>Information</div>
+        <div>Information
+          <ul>
+            {infromation.map((info, idx) => (
+              <li key={idx} className='flex flex-row'>
+                {info.content}
+              </li>
+            ))}
+          </ul>
+        </div>
         <div>
           <button>
             Whatsapp
