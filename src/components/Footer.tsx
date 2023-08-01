@@ -1,8 +1,8 @@
 'use client'
 
-import  {CiLocationOn}  from 'react-icons/ci'
-import  {BsTelephone}  from 'react-icons/bs'
-import {AiOutlineClockCircle}  from 'react-icons/ai'
+import { CiLocationOn } from 'react-icons/ci'
+import { BsTelephone } from 'react-icons/bs'
+import { AiOutlineClockCircle } from 'react-icons/ai'
 
 
 
@@ -19,11 +19,22 @@ function Footer() {
   {
     img: <BsTelephone />,
     content: '+972-50-443-8778'
-  },
-  {
-    img: '',
-    content: 'alonmlievski@gmail.com'
   }]
+
+  const socialIcons = [
+    {
+    img: 'fb'
+  },
+    {
+    img: 'wa'
+  },
+    {
+    img: 'gh'
+  },
+    {
+    img: 'li'
+  },
+  ]
 
   return (
     <footer className=''>
@@ -38,10 +49,24 @@ function Footer() {
                 <div>{con.content}</div>
               </li>
             ))}
+            <li className='flex flex-row'>alonmlievski@gmail.com</li>
+            <li className='flex flex-row'>
+            {
+                socialIcons.map((icon, idx) => (
+                  <div key={idx}>
+                    <div>{icon.img}</div>
+                  </div>
+                ))
+              }
+            </li>
           </ul>
         </div>
         <div>Information</div>
-        <div>Whatsapp</div>
+        <div>
+          <button>
+            Whatsapp
+          </button>
+        </div>
       </div>
     </footer>
   )
