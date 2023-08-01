@@ -25,6 +25,7 @@
     }
 
     >:nth-child(3) {
+        font-style: #6b6b6b;
         border: 1px solid #000;
         background-color: azure;
     }
