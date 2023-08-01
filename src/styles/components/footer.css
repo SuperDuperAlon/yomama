@@ -4,20 +4,27 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
     > * {
-        border: 1px solid #000;
+
         padding: 0.5rem;
     }
     >:first-child {
         font-family: 'cinzel'; 
-        font-size: 1rem;
+        font-size: 1.5rem;  
     }
     >:nth-child(2) {
         background-color: aqua;
+        border: 1px solid #000;
+        font-style: #6b6b6b;
+        > * {
+            font-size: 0.8em;
+        }
     }
     >:nth-child(3) {
+        border: 1px solid #000;
         background-color:azure;
     }
     >:last-child {
+        border: 1px solid #000;
         background-color:blue;
     }
 }
