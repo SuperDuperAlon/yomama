@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { appService } from '../../appwrite'
+import { appService } from '@/storage/appwrite'
 
 const AdminFlowerCreate = ({ loadFlowers }) => {
   const [flowerData, setFlowerData] = useState({

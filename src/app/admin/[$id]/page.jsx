@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import { appService } from '../../../../appwrite'
+import { appService } from '../../../storage/appwrite'
 
 const Edit = () => {
 
