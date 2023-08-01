@@ -1,0 +1,23 @@
+.footer-container {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    > * {
+        border: 1px solid #000;
+        padding: 0.5rem;
+    }
+    >:first-child {
+        font-family: 'cinzel'; 
+        font-size: 1rem;
+    }
+    >:nth-child(2) {
+        background-color: aqua;
+    }
+    >:nth-child(3) {
+        background-color:azure;
+    }
+    >:last-child {
+        background-color:blue;
+    }
+}

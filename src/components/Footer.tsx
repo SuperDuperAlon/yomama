@@ -20,8 +20,8 @@ const contact = [{
 function Footer() {
   return (
     <footer className=''>
-      <div className='flex flex-row justify-between'>
-        <div>YOMAMA</div>
+      <div className='footer-container'>
+        <div>Yomama</div>
         <div>Contact
           <ul>
             {contact.map((con, idx)=> (
