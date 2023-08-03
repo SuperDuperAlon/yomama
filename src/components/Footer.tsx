@@ -38,10 +38,10 @@ function Footer() {
 
 
   const infromation = [
-    { content: 'terms of trade' },
-    { content: 'terms of trade' },
-    { content: 'terms of trade' },
-    { content: 'terms of trade' },
+    { content: 'terms of use' },
+    { content: 'payment and delivery' },
+    { content: 'personal data protection' },
+    { content: 'customer service' },
   ]
 
   return (
