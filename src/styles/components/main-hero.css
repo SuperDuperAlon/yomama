@@ -2,3 +2,21 @@
     min-height: 75vh;
     background-image: url('/images/hero-image.jpg');
 }
+
+.main-icon-list {
+    padding: 2rem 0;
+    font-style: #6b6b6b;
+    > * {
+        min-width: 200px;
+        display: flex;
+        justify-content: center;
+    }
+    >:first-child {
+        font-size: 3rem;
+        margin: 0.5rem 0;
+    }
+    >:last-child {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+}

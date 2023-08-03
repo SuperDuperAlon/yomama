@@ -22,8 +22,8 @@ const MainTba = () => {
         <div className='index-layout'>
             <div className='flex flex-row justify-between'>
                 {entries.map((entry, idx) => (
-                    <div key={idx} className=''>
-                        <div>{entry.icon}</div>
+                    <div key={idx} className='main-icon-list flex flex-col'>
+                        <div className=''>{entry.icon}</div>
                         <div>{entry.desc}</div>
                     </div>
 
