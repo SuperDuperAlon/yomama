@@ -8,9 +8,6 @@ const userIcon = <AiOutlineUser />
 const heartIcon = <AiOutlineHeart />
 const shoppingIcon = <AiOutlineShopping />
 const magnifyingGlassIcon = <RxMagnifyingGlass />
-// const locationIcon = <IoLocationOutline />
-// const clockIcon = <AiOutlineClockCircle />
-// const phoneIcon = <BsTelephone />
 
 export const icons = {
     userIcon,

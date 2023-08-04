@@ -11,6 +11,7 @@ function Header() {
     { name: 'Contact' }
   ]
 
+
   return (
     <header className='index-layout full'>
       <div className='flex justify-between flex-row top-header'>
@@ -20,16 +21,33 @@ function Header() {
           <input type="text" className='' placeholder='Search' />
         </div>
         <div className='flex flex-row header-nav'>
-          <div>{icons.userIcon}</div>
-          <div>{icons.shoppingIcon}</div>
-          <div>{icons.heartIcon}</div>
+          <div>
+            <Link href='/'>
+              {icons.userIcon}
+            </Link>
+          </div>
+          <div>
+            <Link href='/'>
+              {icons.heartIcon}
+            </Link>
+          </div>
+          <div>
+            <Link href='/'>
+              {icons.shoppingIcon}
+            </Link>
+          </div>
+
         </div>
       </div>
       <div className='break-line full'></div>
       <div className='bottom-header flex'>
         <ul className='flex flex-row gap-6'>
           {links.map((link, idx) => (
-            <li key={idx}>{link.name}</li>
+            <li key={idx}>
+              <Link href='/'>
+                {link.name}
+              </Link>
+            </li>
           ))}
         </ul>
       </div>
