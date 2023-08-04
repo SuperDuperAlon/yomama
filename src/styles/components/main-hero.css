@@ -1,12 +1,25 @@
 .hero {
     min-height: 75vh;
     background-image: url('/images/hero-image.jpg');
+    > * {
+        font-family: 'cinzel'; 
+        gap: 3rem;
+        >:first-child {
+            font-size: 1.5rem;
+        }
+        >:last-child {
+            font-size: 1rem;
+            background-color: #cedfdc;
+            padding: 0.5rem 1.5rem;
+        }
+
+    }
 }
 
 .main-icon-list {
     padding: 2rem 0;
-    font-style: #6b6b6b;
     > * {
+        font-style: #6b6b6b;
         min-width: 200px;
         display: flex;
         justify-content: center;

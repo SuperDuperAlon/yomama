@@ -1,19 +1,19 @@
 import React from 'react'
 
-import { PiShootingStar } from 'react-icons/pi'
+import { PiShootingStar, PiMagicWand, PiHandHeart } from 'react-icons/pi'
 
 const entries = [
     {
         icon: <PiShootingStar />,
-        desc: 'desc'
+        desc: 'Fresh flowers'
     },
     {
-        icon: <PiShootingStar />,
-        desc: 'desc'
+        icon: <PiMagicWand />,
+        desc: 'Unique designs'
     },
     {
-        icon: <PiShootingStar />,
-        desc: 'desc'
+        icon: <PiHandHeart />,
+        desc: 'Customer care'
     },
 ]
 
