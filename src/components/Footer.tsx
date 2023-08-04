@@ -3,6 +3,7 @@
 import { CiLocationOn } from 'react-icons/ci'
 import { BsTelephone } from 'react-icons/bs'
 import { AiOutlineClockCircle } from 'react-icons/ai'
+import { FaFacebookSquare, FaWhatsappSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 
 
 
@@ -23,16 +24,16 @@ function Footer() {
 
   const socialIcons = [
     {
-      img: 'fb'
+      img: <FaFacebookSquare />
     },
     {
-      img: 'wa'
+      img: <FaWhatsappSquare />
     },
     {
-      img: 'gh'
+      img: <FaGithubSquare />
     },
     {
-      img: 'li'
+      img: <FaLinkedin />
     },
   ]
 
