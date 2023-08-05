@@ -17,7 +17,7 @@ const entries = [
     },
 ]
 
-const MainTba = () => {
+const MainIcons = () => {
     return (
         <div className='index-layout'>
             <div className='flex flex-row justify-between'>
@@ -33,4 +33,4 @@ const MainTba = () => {
     )
 }
 
-export default MainTba
+export default MainIcons
