@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { appService } from '@/storage/appwrite'
+import Image from "next/image";
 
 const MainProductList = () => {
     const [flowers, setFlowers] = useState([])
@@ -30,7 +31,10 @@ const MainProductList = () => {
                     <>
                         <div>
                             <div>
-                                Image
+                                <Image 
+                                src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
+                                width={720}
+                                height={1280} />
                             </div>
                             <div className="flex flex-row">
                                 <div>
