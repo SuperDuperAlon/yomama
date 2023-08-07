@@ -26,28 +26,35 @@ const MainProductList = () => {
                     <button>To the Catalogue</button>
                 </div>
             </div>
-            <div className="index-layout">
-                {flowers.map((flower, idx) => (
-                    <div key={idx} className="flex flex-col w-fit overflow-hidden">
-                        <Image
-                            src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
-                            width={360}
-                            height={240}
-                            loading="lazy" />
 
-                        <div className="flex flex-row">
+
+
+<div>
+
+            <ul className="flex">
+                {flowers.map((flower, idx) => (
+                    <li key={idx} className="w-fit flex">
+                        <div className="w-28 h-44">
+                            <Image
+                                src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
+                                width={1280}
+                                height={240}
+                                loading="lazy" />
+                            <div className="flex flex-row">
+                            </div>
                             <div>
                                 <div>{flower.name}</div>
-                                <div>{flower.price}</div>
+                                <div>${flower.price}</div>
                             </div>
                             <div>
                                 <button>Heart</button>
                                 <button>Cart</button>
                             </div>
                         </div>
-                    </div>
+                    </li>
                 ))}
-            </div>
+            </ul>
+                </div>
         </>
     )
 }
