@@ -29,12 +29,12 @@ const MainProductList = () => {
 
 
 
-<div>
+<div className="index-layout">
 
             <ul className="flex">
                 {flowers.map((flower, idx) => (
-                    <li key={idx} className="w-fit flex">
-                        <div className="w-28 h-44">
+                    <li key={idx} className="w-fit flex mr-6">
+                        <div className="w-26 h-56">
                             <Image
                                 src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
                                 width={1280}
