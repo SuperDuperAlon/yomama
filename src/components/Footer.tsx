@@ -52,7 +52,7 @@ function Footer() {
         <div>Contact
           <ul>
             {contact.map((con, idx) => (
-              <li key={idx} className='flex flex-row'>
+              <li key={idx} className='flex flex-row gap-3'>
                 {/* {console.log(con.img)} */}
                 <div>{con.img}</div>
                 <div>{con.content}</div>
@@ -73,7 +73,7 @@ function Footer() {
         <div>Information
           <ul>
             {infromation.map((info, idx) => (
-              <li key={idx} className='flex flex-row'>
+              <li key={idx} className='flex flex-row gap-3'>
                 {info.content}
               </li>
             ))}
