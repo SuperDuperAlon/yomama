@@ -12,18 +12,14 @@ client
 
 const catchAll = async() => {
   const data = await databases.listDocuments(process.env.NEXT_PUBLIC_DATABASE_ID, process.env.NEXT_PUBLIC_COLLECTION_ID);
-  // console.log(data.documents);
   return data
 }
 
 try {
   const retreived = await catchAll()
-  console.log(retreived);
 } catch (error) {
   console.log(error); // 
 }
-
-
 
 const page = () => {
   return (

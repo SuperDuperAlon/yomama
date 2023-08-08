@@ -6,6 +6,5 @@ export const getData = async () => {
     process.env.DATABASE_ID,
     process.env.COLLECTION_ID
   );
-  console.log(data.documents);
   return data.documents;
 };

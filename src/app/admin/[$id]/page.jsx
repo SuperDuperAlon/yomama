@@ -20,8 +20,6 @@ const [flower, setFlower] = useState(null)
     return retreivedFlower
   }
 
-  console.log(flower);
-
   if (!params.$id && flower) return <div>no id</div>
   else return (
     <div>Name {flower.name}
