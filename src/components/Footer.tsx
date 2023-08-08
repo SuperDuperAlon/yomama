@@ -80,9 +80,9 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <button>
-            Whatsapp
-          </button>
+          <a href="https://wa.me/972504438778" target='_blank'>
+            <button>Whatsapp</button>
+          </a>
         </div>
       </div>
     </footer>
