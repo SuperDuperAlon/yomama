@@ -3,6 +3,7 @@
 import { CiLocationOn } from 'react-icons/ci'
 import { BsTelephone } from 'react-icons/bs'
 import { AiOutlineClockCircle } from 'react-icons/ai'
+import { MdOutlineMail } from 'react-icons/md'
 import { FaFacebookSquare, FaWhatsappSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 
 
@@ -11,16 +12,21 @@ function Footer() {
 
   const contact = [{
     img: <CiLocationOn />,
-    content: 'Shderot Hen 20, Tel Aviv, Israel'
+    content: 'Bursa, Ramat Gan, Israel'
   },
   {
     img: <AiOutlineClockCircle />,
-    content: 'open for work'
+    content: 'Open for work'
   },
   {
     img: <BsTelephone />,
     content: '+972-50-443-8778'
-  }]
+  },
+  {
+    img: <MdOutlineMail />,
+    content: 'alonmlievski@gmail.com'
+  },
+]
 
   const socialIcons = [
     {
@@ -53,12 +59,10 @@ function Footer() {
           <ul>
             {contact.map((con, idx) => (
               <li key={idx} className='flex flex-row gap-3'>
-                {/* {console.log(con.img)} */}
                 <div>{con.img}</div>
                 <div>{con.content}</div>
               </li>
             ))}
-            <li className='flex flex-row'>alonmlievski@gmail.com</li>
             <li className='flex flex-row'>
               {
                 socialIcons.map((icon, idx) => (
