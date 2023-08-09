@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { appService } from '@/storage/appwrite'
+import { icons } from '@/styles/assets/icons/icons'
 import Image from "next/image";
 
 const MainProductList = () => {
@@ -35,19 +36,21 @@ const MainProductList = () => {
                         if (idx < 4) {
                             return (
                                 <li key={idx} className="flex flex-col">
-                                        <Image
-                                            src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
-                                            width={240}
-                                            height={160}
-                                            loading="lazy" />
-                                        <div className="flex flex-row justify-between desc">
+                                    <Image
+                                        src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
+                                        width={240}
+                                        height={160}
+                                        loading="lazy" />
+                                    <div className="flex flex-row justify-between">
+                                        <div className="flex flex-col main-card-desc">
                                             <div className="capitalize">{flower.name}</div>
                                             <div className="">${flower.price}</div>
                                         </div>
-                                        <div>
-                                            <button>Heart</button>
-                                            <button>Cart</button>
+                                        <div className="main-card-icons">
+                                            <button>{icons.heartIcon}</button>
+                                            <button>{icons.shoppingIcon}</button>
                                         </div>
+                                    </div>
                                 </li>)
                         }
                     })}
