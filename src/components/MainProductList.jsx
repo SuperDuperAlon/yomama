@@ -41,6 +41,7 @@ const MainProductList = () => {
                                         src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
                                         width={240}
                                         height={160}
+                                        alt="flower name"
                                         loading="lazy" />
                                     <div className="flex flex-row justify-between py-4">
                                         <div className="flex flex-col main-card-desc">
