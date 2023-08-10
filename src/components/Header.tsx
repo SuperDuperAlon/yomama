@@ -3,7 +3,6 @@ import React from 'react'
 import { icons } from '@/styles/assets/icons/icons'
 import HeaderFilter from './HeaderFilter'
 
-
 function Header() {
 
   const links = [
