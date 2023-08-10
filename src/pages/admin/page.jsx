@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { flowerService } from '@/services/flower.service'
 import { appService } from '../../storage/appwrite'
 
-import AdminFlowerList from '@/components/admin-flower-list'
-import AdminFlowerCreate from '@/components/admin-flower-create'
+import AdminFlowerList from '@/components/AdminFlowerList'
+import AdminFlowerCreate from '@/components/AdminFlowerCreate'
 
 import Link from "next/link";
 
