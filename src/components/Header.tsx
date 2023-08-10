@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 import { icons } from '@/styles/assets/icons/icons'
+import HeaderFilter from './HeaderFilter'
+
 
 function Header() {
 
@@ -17,8 +19,7 @@ function Header() {
       <div className='flex justify-between flex-row top-header'>
         <div className="logo">Yomama</div>
         <div className='flex flex-row main-input'>
-          {icons.magnifyingGlassIcon}
-          <input type="text" className='' placeholder='Search' />
+          <HeaderFilter />
         </div>
         <div className='flex flex-row header-nav'>
           <div>

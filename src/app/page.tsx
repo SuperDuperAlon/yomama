@@ -1,11 +1,7 @@
-'use client'
-
-import Image from "next/image";
-import { useEffect } from "react";
 import React from "react";
-import Hero from '@/components/main-hero'
-import MainIcons from '@/components/main-icons'
-import MainProductList from '@/components/main-product-list'
+import MainHero from '@/components/MainHero'
+import MainIcons from '@/components/MainIcons'
+import MainProductList from '@/components/MainProductList'
 
 export default function Home() {
 
@@ -13,7 +9,7 @@ export default function Home() {
 
     return (
         <>
-            < Hero />
+            < MainHero />
             < MainIcons />
             < MainProductList />
         </>

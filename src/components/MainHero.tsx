@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-const Hero = () => {
+const MainHero = () => {
     return (
         <div className="">
             <div className="hero">
@@ -14,4 +14,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default MainHero

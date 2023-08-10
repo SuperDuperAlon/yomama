@@ -8,8 +8,6 @@ import { FaFacebookF, FaWhatsapp } from 'react-icons/fa'
 import { GrLinkedinOption } from 'react-icons/gr'
 import { FiGithub } from 'react-icons/fi'
 
-
-
 function Footer() {
 
   const contact = [{
@@ -66,7 +64,7 @@ function Footer() {
           <ul>
             {contact.map((con, idx) => (
               <li key={idx} className='flex flex-row gap-3'>
-                <div>{con.img}</div>
+                <div className='mr-2'>{con.img}</div>
                 <div className='number'>{con.content}</div>
               </li>
             ))}

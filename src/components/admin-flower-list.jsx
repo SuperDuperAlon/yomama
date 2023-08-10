@@ -1,12 +1,7 @@
+import React from 'react'
 import Link from 'next/link'
-import React, { useEffect } from 'react'
-// import {getData} from '@/lib/getdata'
-
 
 const AdminFlowerList = ({ flowers, onRemoveFlower }) => {
-
-
-
 
   return (
     <table>
