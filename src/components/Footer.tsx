@@ -74,8 +74,7 @@ function Footer() {
               {
                 socialIcons.map((icon, idx) => (
                   <div key={idx}>
-                    <a href={icon.link}>
-
+                    <a href={icon.link} target='_blank'>
                       <div className='text-xl mr-2 py-2'>{icon.img}</div>
                     </a>
                   </div>
