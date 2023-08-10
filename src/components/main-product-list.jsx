@@ -22,16 +22,19 @@ const MainProductList = () => {
     else return (
         <>
             <div className='index-layout'>
-                <div className='flex justify-between'>
-                    <div>Our Products</div>
+                <div className='mb-4 flex justify-between'>
+                    <div className="flex items-center">Our Products</div>
+                    <a href="/" className="white-sqr-btn">
+
                     <button>To the Catalogue</button>
+                    </a>
                 </div>
             </div>
 
 
 
             <div className="index-layout main-card">
-                <ul className="flex justify-between">
+                <ul className="flex justify-between ">
                     {flowers.map((flower, idx) => {
                         if (idx < 4) {
                             return (
@@ -41,10 +44,10 @@ const MainProductList = () => {
                                         width={240}
                                         height={160}
                                         loading="lazy" />
-                                    <div className="flex flex-row justify-between">
+                                    <div className="flex flex-row justify-between py-4">
                                         <div className="flex flex-col main-card-desc">
                                             <div className="capitalize">{flower.name}</div>
-                                            <div className="">${flower.price}</div>
+                                            <div className="align-bottom number">${flower.price}</div>
                                         </div>
                                         <div className="main-card-icons">
                                             <button>{icons.heartIcon}</button>
