@@ -26,12 +26,10 @@ const MainProductList = () => {
                     <div className="flex items-center">Our Products</div>
                     <a href="/" className="white-sqr-btn">
 
-                    <button>To the Catalogue</button>
+                        <button>To the Catalogue</button>
                     </a>
                 </div>
             </div>
-
-
 
             <div className="index-layout main-card">
                 <ul className="flex justify-between ">

@@ -26,7 +26,6 @@ const MainIcons = () => {
                         <div className=''>{entry.icon}</div>
                         <div>{entry.desc}</div>
                     </div>
-
                 ))}
             </div>
         </div>

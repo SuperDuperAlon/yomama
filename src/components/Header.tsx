@@ -12,7 +12,6 @@ function Header() {
     { name: 'Contact' }
   ]
 
-
   return (
     <header className='index-layout full'>
       <div className='flex justify-between flex-row top-header'>
@@ -36,7 +35,6 @@ function Header() {
               {icons.shoppingIcon}
             </Link>
           </div>
-
         </div>
       </div>
       <div className='break-line full'></div>

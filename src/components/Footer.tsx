@@ -25,8 +25,7 @@ function Footer() {
   {
     img: <MdOutlineMail />,
     content: 'alonmlievski@gmail.com'
-  },
-  ]
+  }]
 
   const socialIcons = [
     {
