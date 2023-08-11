@@ -9,14 +9,14 @@ const MainProductList = () => {
     const [flowers, setFlowers] = useState([])
 
     useEffect(() => {
+        async function loadFlowers() {
+            const retrievedFlowers = await appService.query('rose')
+            setFlowers(retrievedFlowers)
+            return retrievedFlowers
+        }
         loadFlowers()
     }, [])
 
-    async function loadFlowers() {
-        const retrievedFlowers = await appService.query('rose')
-        setFlowers(retrievedFlowers)
-        return retrievedFlowers
-    }
 
     if (!flowers) return <div>There are no flowers</div>
     else return (
