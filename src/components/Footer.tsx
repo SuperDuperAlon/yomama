@@ -1,59 +1,8 @@
-'use client'
-
-import { CiLocationOn } from 'react-icons/ci'
-import { BsTelephone } from 'react-icons/bs'
-import { AiOutlineClockCircle } from 'react-icons/ai'
-import { MdOutlineMail } from 'react-icons/md'
-import { FaFacebookF, FaWhatsapp } from 'react-icons/fa'
-import { GrLinkedinOption } from 'react-icons/gr'
-import { FiGithub } from 'react-icons/fi'
+import { arrays } from "@/lib/arrays"
 
 function Footer() {
 
-  const contact = [{
-    img: <CiLocationOn />,
-    content: 'Bursa, Ramat Gan, Israel'
-  },
-  {
-    img: <AiOutlineClockCircle />,
-    content: 'Open for work'
-  },
-  {
-    img: <BsTelephone />,
-    content: '+972-50-443-8778'
-  },
-  {
-    img: <MdOutlineMail />,
-    content: 'alonmlievski@gmail.com'
-  }]
-
-  const socialIcons = [
-    {
-      img: <FaFacebookF />,
-      link: 'https://www.facebook.com/alon.mlievski'
-    },
-    {
-      img: <FaWhatsapp />,
-      link: "https://wa.me/972504438778"
-    },
-    {
-      img: <FiGithub />,
-      link: "https://github.com/SuperDuperAlon"
-
-    },
-    {
-      img: <GrLinkedinOption />,
-      link: "https://www.linkedin.com/in/alon-mlievski-6756aa74/"
-    },
-  ]
-
-
-  const infromation = [
-    { content: 'terms of use' },
-    { content: 'payment and delivery' },
-    { content: 'personal data protection' },
-    { content: 'customer service' },
-  ]
+const {footerContact, footerSocialIcons, footerInfo} = arrays
 
   return (
     <footer className=''>
@@ -61,15 +10,15 @@ function Footer() {
         <div>Yomama</div>
         <div>Contact
           <ul>
-            {contact.map((con, idx) => (
+            {footerContact.map((contact, idx) => (
               <li key={idx} className='flex flex-row gap-3'>
-                <div className='mr-2'>{con.img}</div>
-                <div className='number'>{con.content}</div>
+                <div className='mr-2'>{contact.img}</div>
+                <div className='number'>{contact.content}</div>
               </li>
             ))}
             <li className='flex flex-row py-2'>
               {
-                socialIcons.map((icon, idx) => (
+                footerSocialIcons.map((icon, idx) => (
                   <div key={idx}>
                     <a href={icon.link} target='_blank'>
                       <div className='text-xl mr-2 py-2'>{icon.img}</div>
@@ -82,7 +31,7 @@ function Footer() {
         </div>
         <div>Information
           <ul>
-            {infromation.map((info, idx) => (
+            {footerInfo.map((info, idx) => (
               <li key={idx} className='flex flex-row gap-3'>
                 {info.content}
               </li>

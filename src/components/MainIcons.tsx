@@ -1,30 +1,14 @@
-import React from 'react'
-
-import { PiShootingStar, PiMagicWand, PiHandHeart } from 'react-icons/pi'
-
-const entries = [
-    {
-        icon: <PiShootingStar />,
-        desc: 'Fresh flowers'
-    },
-    {
-        icon: <PiMagicWand />,
-        desc: 'Unique designs'
-    },
-    {
-        icon: <PiHandHeart />,
-        desc: 'Customer care'
-    },
-]
+import { arrays } from "@/lib/arrays"
 
 const MainIcons = () => {
+    const { heroIcons } = arrays
     return (
         <div className='index-layout'>
             <div className='flex flex-row justify-between'>
-                {entries.map((entry, idx) => (
+                {heroIcons.map((icon, idx) => (
                     <div key={idx} className='main-icon-list flex flex-col'>
-                        <div className=''>{entry.icon}</div>
-                        <div>{entry.desc}</div>
+                        <div className=''>{icon.icon}</div>
+                        <div>{icon.desc}</div>
                     </div>
                 ))}
             </div>

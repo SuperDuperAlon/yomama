@@ -1,16 +1,11 @@
 import Link from 'next/link'
-import React from 'react'
 import { icons } from '@/styles/assets/icons/icons'
 import HeaderFilter from './HeaderFilter'
+import {arrays} from '@/lib/arrays'
 
 function Header() {
 
-  const links = [
-    { name: 'Products' },
-    { name: 'About' },
-    { name: 'Workshop' },
-    { name: 'Contact' }
-  ]
+const {headerLinks} = arrays
 
   return (
     <header className='index-layout full'>
@@ -40,7 +35,7 @@ function Header() {
       <div className='break-line full'></div>
       <div className='bottom-header flex'>
         <ul className='flex flex-row gap-6'>
-          {links.map((link, idx) => (
+          {headerLinks.map((link, idx) => (
             <li key={idx}>
               <Link href='/'>
                 {link.name}

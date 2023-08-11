@@ -13,7 +13,7 @@ const MainProductList = () => {
     }, [])
 
     async function loadFlowers() {
-        const retrievedFlowers = await appService.query()
+        const retrievedFlowers = await appService.query('rose')
         setFlowers(retrievedFlowers)
         return retrievedFlowers
     }

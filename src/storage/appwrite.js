@@ -1,4 +1,4 @@
-import { Client, Databases, ID } from "appwrite";
+import { Client, Databases, ID, Query } from "appwrite";
 
 const client = new Client();
 
@@ -9,9 +9,14 @@ client
   .setProject(process.env.NEXT_PUBLIC_PROJECT_ID) // Your project ID
   ;
 
-async function query() {
+async function query(filterBy) {
   try {
-    const query = await databases.listDocuments(process.env.NEXT_PUBLIC_DATABASE_ID, process.env.NEXT_PUBLIC_COLLECTION_ID);
+    console.log(filterBy);
+    const query = await databases.listDocuments(process.env.NEXT_PUBLIC_DATABASE_ID, process.env.NEXT_PUBLIC_COLLECTION_ID,
+      [
+        Query.equal('name', filterBy),
+      ]
+    );
     const data = query.documents
     return data
   } catch (error) {
