@@ -2,7 +2,7 @@ import { arrays } from "@/lib/arrays"
 
 function Footer() {
 
-const {footerContact, footerSocialIcons, footerInfo} = arrays
+  const { footerContact, footerSocialIcons, footerInfo } = arrays
 
   return (
     <footer className=''>
@@ -12,16 +12,16 @@ const {footerContact, footerSocialIcons, footerInfo} = arrays
           <ul>
             {footerContact.map((contact, idx) => (
               <li key={idx} className='flex flex-row gap-3'>
-                <div className='mr-2'>{contact.img}</div>
-                <div className='number'>{contact.content}</div>
+                <div className='mr-2'>{contact.icon}</div>
+                <div className='number'>{contact.desc}</div>
               </li>
             ))}
             <li className='flex flex-row py-2'>
               {
                 footerSocialIcons.map((icon, idx) => (
                   <div key={idx}>
-                    <a href={icon.link} target='_blank'>
-                      <div className='text-xl mr-2 py-2'>{icon.img}</div>
+                    <a href={icon.desc} target='_blank'>
+                      <div className='text-xl mr-2 py-2'>{icon.icon}</div>
                     </a>
                   </div>
                 ))
