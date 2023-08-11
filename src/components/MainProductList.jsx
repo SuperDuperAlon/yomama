@@ -17,6 +17,7 @@ const MainProductList = () => {
         loadFlowers()
     }, [])
 
+    console.log('test');
 
     if (!flowers) return <div>There are no flowers</div>
     else return (
