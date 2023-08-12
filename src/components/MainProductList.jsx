@@ -6,7 +6,7 @@ import { icons } from '@/styles/assets/icons/icons'
 import Image from "next/image";
 
 const MainProductList = () => {
-    const [flowers, setFlowers] = useState<Flowers>()
+    const [flowers, setFlowers] = useState([])
 
     useEffect(() => {
         async function loadFlowers() {
