@@ -6,18 +6,19 @@ import { icons } from '@/styles/assets/icons/icons'
 import Image from "next/image";
 
 const MainProductList = () => {
-    const [flowers, setFlowers] = useState([])
+    const [flowers, setFlowers] = useState<Flowers>()
 
     useEffect(() => {
         async function loadFlowers() {
-            const retrievedFlowers = await appService.query('rose')
-            setFlowers(retrievedFlowers)
-            return retrievedFlowers
-        }
-        loadFlowers()
-    }, [])
-
-    console.log('test');
+            try {
+              const retrievedFlowers = await appService.query('rose');
+              setFlowers(retrievedFlowers);
+            } catch (error) {
+              console.error('Error loading flowers:', error);
+            }
+          }
+          loadFlowers();
+        }, []);
 
     if (!flowers) return <div>There are no flowers</div>
     else return (

@@ -4,3 +4,7 @@ interface Flower {
     name: string;
     price: number;
 }
+
+interface Flowers {
+    flowers: (Flower | undefined)[]
+}
