@@ -27,7 +27,6 @@ const MainProductList = () => {
                 <div className='mb-4 flex justify-between'>
                     <div className="flex items-center">Our Products</div>
                     <a href="/" className="white-sqr-btn">
-
                         <button>To the Catalogue</button>
                     </a>
                 </div>
