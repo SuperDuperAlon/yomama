@@ -12,3 +12,7 @@ th {
     font-weight: bold;
     background-color: azure;
 }
+/* svg {
+    stroke: var(--grey);
+    fill: var(--grey)
+} */

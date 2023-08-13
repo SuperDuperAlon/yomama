@@ -9,13 +9,13 @@ client
   .setProject(process.env.NEXT_PUBLIC_PROJECT_ID) // Your project ID
   ;
 
-async function query(filterBy) {
+async function query() {
   try {
-    console.log(filterBy);
+    // console.log(filterBy);
     const query = await databases.listDocuments(process.env.NEXT_PUBLIC_DATABASE_ID, process.env.NEXT_PUBLIC_COLLECTION_ID,
-      [
-        Query.equal('name', filterBy),
-      ]
+      // [
+      //   Query.equal('name', filterBy),
+      // ]
     );
     const data = query.documents
     return data

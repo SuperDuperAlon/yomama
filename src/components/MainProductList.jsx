@@ -4,21 +4,38 @@ import { useEffect, useState } from "react";
 import { appService } from '@/storage/appwrite'
 import { icons } from '@/styles/assets/icons/icons'
 import Image from "next/image";
+// import ScreenWidthListener from "@/lib/helpers";
 
 const MainProductList = () => {
     const [flowers, setFlowers] = useState([])
+    // const [numOfFlowers, setNumOfFlowers] = useState(null)
 
+    
     useEffect(() => {
         async function loadFlowers() {
             try {
-              const retrievedFlowers = await appService.query('rose');
+              const retrievedFlowers = await appService.query();
               setFlowers(retrievedFlowers);
             } catch (error) {
               console.error('Error loading flowers:', error);
             }
-          }
-          loadFlowers();
-        }, []);
+        }
+        loadFlowers();
+    }, []);
+    
+        // useEffect(() => {
+        //     function upadateScreenSize() {
+        //         const screenSize = ScreenWidthListener()
+        //         console.log(screenSize);
+        //         if (screenSize > 684) setNumOfFlowers(4)
+        //         else setNumOfFlowers(3)
+        //     }
+        //     upadateScreenSize()
+        //     loadFlowers()
+        // }, [])
+
+        // console.log(numOfFlowers);
+        // console.log(screenSize);
 
     if (!flowers) return <div>There are no flowers</div>
     else return (

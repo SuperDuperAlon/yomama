@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { icons } from '@/styles/assets/icons/icons'
 import HeaderFilter from './HeaderFilter'
-import {arrays} from '@/lib/arrays'
+import { arrays } from '@/lib/arrays'
 
 function Header() {
-
-const {headerLinks} = arrays
+  
+  const { headerLinks } = arrays
 
   return (
     <header className='index-layout full'>
