@@ -4,7 +4,7 @@ import HeaderFilter from './HeaderFilter'
 import { arrays } from '@/lib/arrays'
 
 function Header() {
-  
+
   const { headerLinks } = arrays
 
   return (
@@ -17,17 +17,23 @@ function Header() {
         <div className='flex flex-row header-nav'>
           <div>
             <Link href='/'>
-              {icons.userIcon}
+              <button className='bg-red-300'>
+                {icons.userIcon}
+              </button>
             </Link>
           </div>
           <div>
             <Link href='/'>
-              {icons.heartIcon}
+              <button>
+                {icons.heartIcon}
+              </button>
             </Link>
           </div>
           <div>
             <Link href='/'>
-              {icons.shoppingIcon}
+              <button>
+                {icons.shoppingIcon}
+              </button>
             </Link>
           </div>
         </div>
