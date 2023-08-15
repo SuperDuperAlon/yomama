@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { appService } from '@/storage/appwrite'
 import { icons } from '@/styles/assets/icons/icons'
 import Image from "next/image";
-import ScreenWidthListener from "@/lib/helpers";
+import ScreenWidthListener from "@/lib/screenSizeCalculator";
 
 const MainProductList = () => {
     const [flowers, setFlowers] = useState([])
