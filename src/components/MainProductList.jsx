@@ -8,6 +8,9 @@ import ScreenWidthListener from "@/lib/helpers";
 
 const MainProductList = () => {
     const [flowers, setFlowers] = useState([])
+
+    const screenSize = ScreenWidthListener()
+    const numOfFlowers = screenSize > 768 ? 4 : 3
     
     useEffect(() => {
         async function loadFlowers() {
@@ -36,7 +39,7 @@ const MainProductList = () => {
             <div className="index-layout main-card">
                 <ul className="flex justify-between ">
                     {flowers.map((flower, idx) => {
-                        if (idx < 4) {
+                        if (idx < numOfFlowers) {
                             return (
                                 <li key={idx} className="flex flex-col">
                                     <Image
