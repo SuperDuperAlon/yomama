@@ -10,7 +10,7 @@ const MainProductList = () => {
     const [flowers, setFlowers] = useState([])
 
     const screenSize = ScreenWidthListener()
-    const numOfFlowers = screenSize > 768 ? 4 : 3
+    const numOfFlowers = screenSize > 890 ? 4 : 3
     
     useEffect(() => {
         async function loadFlowers() {
