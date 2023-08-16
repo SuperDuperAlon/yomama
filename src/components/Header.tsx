@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { icons } from '@/styles/assets/icons/icons'
-import HeaderFilter from './HeaderFilter'
 import { arrays } from '@/lib/arrays'
+import HeaderFilter from './HeaderFilter'
 
 function Header() {
 

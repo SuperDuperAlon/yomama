@@ -37,17 +37,19 @@ const MainProductList = () => {
             </div>
 
             <div className="index-layout main-card">
-                <ul className="flex justify-between ">
+                <ul className="flex justify-between gap-x-4">
                     {flowers.map((flower, idx) => {
                         if (idx < numOfFlowers) {
                             return (
                                 <li key={idx} className="flex flex-col">
                                     <Image
                                         src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
-                                        width={240}
-                                        height={160}
+                                        width={180}
+                                        height={120}
                                         alt="flower name"
-                                        loading="lazy" />
+                                        loading="lazy"
+                                        layout="responsive"
+                                         />
                                     <div className="flex flex-row justify-between py-4">
                                         <div className="flex flex-col main-card-desc">
                                             <div className="capitalize">{flower.name}</div>
