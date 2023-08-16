@@ -7,10 +7,18 @@
 }
 
 .white-sqr-btn {
-        border: 1px black solid;
-        padding: 0.5rem 1.5rem
-    }
+    border: 1px black solid;
+    padding: 0.5rem 1.5rem
+}
 
-    .number {
-        font-family: quicksand
+.number {
+    font-family: quicksand
+}
+
+.round-btn {
+    border-radius: 50%;
+    padding: 0.25rem;
+    &:hover {
+        background-color: color-mix(in srgb, var(--grey), transparent 80%);
     }
+}

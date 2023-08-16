@@ -16,3 +16,7 @@ th {
     stroke: var(--grey);
     fill: var(--grey)
 } */
+
+*:focus {
+    outline: none;
+}

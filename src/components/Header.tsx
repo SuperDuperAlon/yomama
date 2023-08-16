@@ -17,21 +17,21 @@ function Header() {
         <div className='flex flex-row header-nav'>
           <div>
             <Link href='/'>
-              <button className='bg-red-300'>
+              <button className='round-btn'>
                 {icons.userIcon}
               </button>
             </Link>
           </div>
           <div>
             <Link href='/'>
-              <button>
+              <button className='round-btn'>
                 {icons.heartIcon}
               </button>
             </Link>
           </div>
           <div>
             <Link href='/'>
-              <button>
+              <button className='round-btn'>
                 {icons.shoppingIcon}
               </button>
             </Link>

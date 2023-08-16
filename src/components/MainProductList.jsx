@@ -56,8 +56,8 @@ const MainProductList = () => {
                                             <div className="align-bottom number">${flower.price}</div>
                                         </div>
                                         <div className="main-card-icons">
-                                            <button>{icons.heartIcon}</button>
-                                            <button>{icons.shoppingIcon}</button>
+                                            <button className="round-btn">{icons.heartIcon}</button>
+                                            <button className="round-btn">{icons.shoppingIcon}</button>
                                         </div>
                                     </div>
                                 </li>)
