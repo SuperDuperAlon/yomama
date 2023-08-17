@@ -40,7 +40,7 @@ function Header() {
       </div>
       <div className='break-line full'></div>
       <div className='bottom-header flex'>
-        <ul className='flex flex-row gap-6'>
+        <ul className='flex flex-row'>
           {headerLinks.map((link, idx) => (
             <li key={idx}>
               <Link href='/'>
