@@ -70,4 +70,12 @@
             background-color: var(--teal);
         }
     }
+
+    @media (max-width: 687px) {
+        > ul {
+
+            display: flex;
+            flex-direction: column
+        }
+    }
 }
