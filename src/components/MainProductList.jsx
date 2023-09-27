@@ -46,7 +46,7 @@ const MainProductList = () => {
                         if (idx < numOfFlowers) {
                             return (
                                 <>
-                                <Link>
+                                <Link href='/'>
                                 <li key={idx} className="flex flex-col">
                                     <Image
                                         src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
