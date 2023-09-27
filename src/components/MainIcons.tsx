@@ -4,7 +4,7 @@ const MainIcons = () => {
     const { heroIcons } = arrays
     return (
         <div className='index-layout'>
-            <div className='flex flex-row justify-between'>
+            <div className='flex flex-col md:flex-row justify-between'>
                 {heroIcons.map((icon, idx) => (
                     <div key={idx} className='main-icon-list flex flex-col'>
                         <div className=''>{icon.icon}</div>

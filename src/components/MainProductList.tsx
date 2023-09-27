@@ -15,16 +15,16 @@ const MainProductList = () => {
 
     const screenSize = ScreenWidthListener()
     const numOfFlowers = screenSize > 890 ? 4 : 3
-    
+
     useEffect(() => {
         async function loadFlowers() {
             try {
-              const retrievedFlowers: any = await appService.query()
-              console.log(typeof retrievedFlowers);
-              
-              setFlowers(retrievedFlowers)
+                const retrievedFlowers: any = await appService.query()
+                console.log(typeof retrievedFlowers);
+
+                setFlowers(retrievedFlowers)
             } catch (error) {
-              console.error('Error loading flowers:', error)
+                console.error('Error loading flowers:', error)
             }
         }
         loadFlowers()
@@ -33,8 +33,8 @@ const MainProductList = () => {
     if (!flowers) return <div>There are no flowers</div>
     else return (
         <>
-            <div className='index-layout'>
-                <div className='mb-4 flex justify-between'>
+            <div className='index-layout '>
+                <div className='mb-4 hidden md:flex justify-between'>
                     <div className="flex items-center">Our Products</div>
                     <Link href="/" className="white-sqr-btn">
                         <button>To the Catalogue</button>
@@ -48,29 +48,29 @@ const MainProductList = () => {
                         if (idx < numOfFlowers) {
                             return (
                                 <>
-                                <Link href='/'>
-                                <li key={idx} className="flex flex-col">
-                                    <Image
-                                        src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
-                                        width={180}
-                                        height={120}
-                                        alt="flower name"
-                                        loading="lazy"
-                                        layout="responsive"
-                                         />
-                                    <div className="flex flex-row justify-between py-4">
-                                        <div className="flex flex-col main-card-desc">
-                                            <div className="capitalize">{flower.name}</div>
-                                            <div className="align-bottom number">${flower.price}</div>
-                                        
-                                        </div>
-                                        <div className="main-card-icons">
-                                            <button className="round-btn">{icons.heartIcon}</button>
-                                            <button className="round-btn">{icons.shoppingIcon}</button>
-                                        </div>
-                                    </div>
-                                </li>
-                                </Link>
+                                    <Link href='/'>
+                                        <li key={idx} className="flex flex-col">
+                                            <Image
+                                                src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
+                                                width={180}
+                                                height={120}
+                                                alt="flower name"
+                                                loading="lazy"
+                                                layout="responsive"
+                                            />
+                                            <div className="flex flex-row justify-between py-4">
+                                                <div className="flex flex-col main-card-desc">
+                                                    <div className="capitalize">{flower.name}</div>
+                                                    <div className="align-bottom number">${flower.price}</div>
+
+                                                </div>
+                                                <div className="main-card-icons">
+                                                    <button className="round-btn">{icons.heartIcon}</button>
+                                                    <button className="round-btn">{icons.shoppingIcon}</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </Link>
                                 </>)
                         }
                     })}
