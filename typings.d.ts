@@ -6,5 +6,5 @@ interface Flower {
 }
 
 interface Flowers {
-    flowers: (Flower | undefined)[]
+    flowers: Flower[] | undefined;
 }

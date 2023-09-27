@@ -11,7 +11,7 @@ import { icons } from '@/styles/assets/icons/icons'
 import ScreenWidthListener from "@/lib/screenSizeCalculator"
 
 const MainProductList = () => {
-    const [flowers, setFlowers] = useState([])
+    const [flowers, setFlowers] = useState<Flower[]>([])
 
     const screenSize = ScreenWidthListener()
     const numOfFlowers = screenSize > 890 ? 4 : 3
@@ -19,7 +19,9 @@ const MainProductList = () => {
     useEffect(() => {
         async function loadFlowers() {
             try {
-              const retrievedFlowers = await appService.query()
+              const retrievedFlowers: any = await appService.query()
+              console.log(typeof retrievedFlowers);
+              
               setFlowers(retrievedFlowers)
             } catch (error) {
               console.error('Error loading flowers:', error)
