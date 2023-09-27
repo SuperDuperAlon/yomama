@@ -10,7 +10,9 @@ function Header() {
   return (
     <header className='index-layout full'>
       <div className='flex justify-between flex-row top-header'>
-        <div className="logo">Yomama</div>
+        <div className="logo">
+          <Link href='/'>Yomama</Link>
+        </div>
         <div className='flex flex-row main-input'>
           <HeaderFilter />
         </div>

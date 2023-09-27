@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const MainHero = () => {
@@ -6,7 +7,11 @@ const MainHero = () => {
             <div className="hero">
                 <div className='center'>
                     <div className='text-white'>buy flowers for yomama</div>
-                    <button>To our catalogue</button>
+                    <button>
+                        <Link href='/'>
+                        To our catalogue
+                        </Link>
+                        </button>
                 </div>
             </div>
         </div>

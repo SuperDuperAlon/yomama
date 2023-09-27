@@ -1,10 +1,14 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+
+import Image from "next/image"
+import Link from "next/link"
+
 import { appService } from '@/storage/appwrite'
 import { icons } from '@/styles/assets/icons/icons'
-import Image from "next/image";
-import ScreenWidthListener from "@/lib/screenSizeCalculator";
+
+import ScreenWidthListener from "@/lib/screenSizeCalculator"
 
 const MainProductList = () => {
     const [flowers, setFlowers] = useState([])
@@ -15,14 +19,14 @@ const MainProductList = () => {
     useEffect(() => {
         async function loadFlowers() {
             try {
-              const retrievedFlowers = await appService.query();
-              setFlowers(retrievedFlowers);
+              const retrievedFlowers = await appService.query()
+              setFlowers(retrievedFlowers)
             } catch (error) {
-              console.error('Error loading flowers:', error);
+              console.error('Error loading flowers:', error)
             }
         }
-        loadFlowers();
-    }, []);
+        loadFlowers()
+    }, [])
 
     if (!flowers) return <div>There are no flowers</div>
     else return (
@@ -30,9 +34,9 @@ const MainProductList = () => {
             <div className='index-layout'>
                 <div className='mb-4 flex justify-between'>
                     <div className="flex items-center">Our Products</div>
-                    <a href="/" className="white-sqr-btn">
+                    <Link href="/" className="white-sqr-btn">
                         <button>To the Catalogue</button>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -41,6 +45,8 @@ const MainProductList = () => {
                     {flowers.map((flower, idx) => {
                         if (idx < numOfFlowers) {
                             return (
+                                <>
+                                <Link>
                                 <li key={idx} className="flex flex-col">
                                     <Image
                                         src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
@@ -54,13 +60,16 @@ const MainProductList = () => {
                                         <div className="flex flex-col main-card-desc">
                                             <div className="capitalize">{flower.name}</div>
                                             <div className="align-bottom number">${flower.price}</div>
+                                        
                                         </div>
                                         <div className="main-card-icons">
                                             <button className="round-btn">{icons.heartIcon}</button>
                                             <button className="round-btn">{icons.shoppingIcon}</button>
                                         </div>
                                     </div>
-                                </li>)
+                                </li>
+                                </Link>
+                                </>)
                         }
                     })}
                 </ul>
