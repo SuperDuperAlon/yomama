@@ -6,6 +6,11 @@ import { AiOutlineMenu } from 'react-icons/ai'
 const HeaderMobile = () => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false)
+    const toggleMobileNav = () => {
+        setIsOpen(!isOpen)
+        console.log(isOpen);
+        
+    }
 
     return (
         <header className='index-layout full'>
@@ -14,9 +19,15 @@ const HeaderMobile = () => {
                     Yomama
                 </div>
                 <div className='my-4'>
-                    <button onClick={() => setIsOpen(!isOpen)}>
-                    <AiOutlineMenu />
-                    </button>
+                        <button onClick={toggleMobileNav}>
+                            <AiOutlineMenu />
+                        </button>
+                </div>
+                <div className={`absolute ease-in-out duration-300 ${isOpen ? '-translate-y-0' : '-translate-y-full'}`}>
+                    <li>option</li>
+                    <li>option</li>
+                    <li>option</li>
+                    <li>option</li>
                 </div>
             </div>
         </header>
