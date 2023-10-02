@@ -7,20 +7,24 @@ export const metadata = {
   description: 'Buy flowers for Yomama',
 }
 
+
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+
   return (
     <html lang="en">
       <body className=''>
         <main className='index-layout'>
-        <Header />
-        <section className='main-page'>
-          {children}
-        </section>
-        <Footer />
+          <Header/>
+          <section className='main-page'>
+            {children}
+          </section>
+          <Footer />
         </main>
       </body>
     </html>
