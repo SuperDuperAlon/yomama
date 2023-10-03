@@ -27,9 +27,9 @@ const HeaderMobile = () => {
                     </button>
                 </div>
                 <div className={`absolute left-0 bg-white h-screen w-screen ease-in-out duration-300 ${isOpen ? '-translate-y-0' : '-translate-y-full'}`}>
-                    <button className='absolute right-10 top-4' onClick={toggleMobileNav}>X</button>
+                    <button className='absolute right-10 top-4 text-xl' onClick={toggleMobileNav}>X</button>
                     <div className='flex h-full'>
-                        <ul className='flex flex-col clean-list justify-center items-center w-full'>
+                        <ul className='flex flex-col clean-list justify-center items-center w-full gap-y-1.5 text-2xl'>
                             {headerLinks.map((link, idx) => (
                                 <li key={idx}>
                                     <Link href='/'>
