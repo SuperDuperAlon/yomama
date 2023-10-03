@@ -1,6 +1,5 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
 import { useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { arrays } from '@/lib/arrays'
@@ -9,10 +8,10 @@ const HeaderMobile = () => {
 
     const { headerLinks } = arrays
 
-    const [isOpen, setIsOpen] = useState<boolean>(true)
+    const [isOpen, setIsOpen] = useState<boolean>(false)
+
     const toggleMobileNav = () => {
         setIsOpen(!isOpen)
-        console.log(isOpen);
     }
 
     return (

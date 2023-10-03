@@ -1,6 +1,8 @@
 import Link from 'next/link'
+
 import { icons } from '@/styles/assets/icons/icons'
 import { arrays } from '@/lib/arrays'
+
 import HeaderFilter from './HeaderFilter'
 
 function HeaderDesktop() {
