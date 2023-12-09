@@ -3,8 +3,8 @@ import React from 'react'
 
 const MainHero = () => {
     return (
-        <div className="">
-            <div className="hero">
+        <div className="hero">
+            <div className="hero-img">
                 <div className='center'>
                     <div className='text-white'>buy flowers for yomama</div>
                     <button>
