@@ -1,5 +1,4 @@
 1. adjust layout the main page - set a default grid
-2. stretch the main image so it wont be repeated
 3. adjust cards on main page
 4. add main filter
 5. set authentication
