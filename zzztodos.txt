@@ -1,6 +1,7 @@
-1. adjust layout the main page - set a default grid
-3. adjust cards on main page
-4. add main filter
-5. set authentication
-6. fix hydration issues
-7. add routing
+* adjust layout the main page - set a default grid
+* adjust cards on main page
+* add main filter
+* set authentication
+* fix hydration issues
+* add routing
+* Calculate header size
