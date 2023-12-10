@@ -5,7 +5,8 @@
 .hero-img{
     background-image: url('/images/hero-image.jpg');
     min-height: inherit;
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     >* {
         font-family: 'cinzel';
