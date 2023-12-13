@@ -1,7 +1,8 @@
+* set basic routing
 * adjust layout the main page - set a default grid
 * adjust cards on main page
+* write an algorithm for adjusting number of cards based on the width of the screen
 * add main filter
 * set authentication
 * fix hydration issues
-* add routing
 * Calculate header size

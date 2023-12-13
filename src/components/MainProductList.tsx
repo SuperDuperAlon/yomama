@@ -14,7 +14,7 @@ const MainProductList = () => {
     const [flowers, setFlowers] = useState<Flower[]>([])
 
     const screenSize = ScreenWidthListener()
-    const numOfFlowers = screenSize > 890 ? 4 : 3
+    const numOfFlowers = screenSize > 890 ? 6 : 4
 
     useEffect(() => {
         async function loadFlowers() {
@@ -36,9 +36,9 @@ const MainProductList = () => {
             <div className='index-layout '>
                 <div className='mb-4 hidden md:flex justify-between'>
                     <div className="flex items-center">Our Products</div>
-                    <Link href="/" className="white-sqr-btn">
+                    {/* <Link href="/" className="white-sqr-btn">
                         <button>To the Catalogue</button>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
 
@@ -56,7 +56,7 @@ const MainProductList = () => {
                                                 height={120}
                                                 alt="flower name"
                                                 loading="lazy"
-                                                layout="responsive"
+                                                // layout="responsive"
                                             />
                                             <div className="flex flex-row justify-between py-4">
                                                 <div className="flex flex-col main-card-desc">
@@ -71,7 +71,8 @@ const MainProductList = () => {
                                             </div>
                                         </li>
                                     </Link>
-                                </>)
+                                </>
+                                )
                         }
                     })}
                 </ul>

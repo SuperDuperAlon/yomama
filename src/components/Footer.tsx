@@ -21,7 +21,7 @@ function Footer() {
                 footerSocialIcons.map((icon, idx) => (
                   <div key={idx}>
                     <a href={icon.desc} target='_blank'>
-                      <div className='text-xl mr-2 py-2'>{icon.icon}</div>
+                      {/* <div className='text-xl mr-2 py-2'>{icon.icon}</div> */}
                     </a>
                   </div>
                 ))
@@ -40,7 +40,7 @@ function Footer() {
         </div>
         <div>
           <a href="https://wa.me/972504438778" target='_blank' className='white-sqr-btn'>
-            <button>Whatsapp</button>
+            {/* <button>Whatsapp</button> */}
           </a>
         </div>
       </div>

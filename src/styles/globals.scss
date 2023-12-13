@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* Layout */
+@import '@/styles/layout/_layout.scss';
+
+// /* Setup */
+@import '@/styles/setup/_typography.scss';
+@import '@/styles/setup/_functions.scss';
+@import '@/styles/setup/_variables.scss';
+
+// /* Base */
+@import '@/styles/base/_base.scss';
+@import '@/styles/base/_main-page.scss';
+@import '@/styles/base/_helpers.scss';
+
+// /* Components */
+@import '@/styles/components/_header.scss';
+@import '@/styles/components/_footer.scss';
+@import '@/styles/components/_admin-form.scss';
+@import '@/styles/components/_admin-page.scss';
+@import '@/styles/components/_main-hero.scss';
+
+
+
+

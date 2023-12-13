@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
 
 export const metadata = {
   title: 'Yomama',
