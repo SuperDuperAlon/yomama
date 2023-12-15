@@ -16,8 +16,14 @@
 }
 
 .round-btn {
+    font-size: 1.5rem;
+    border: none;
     border-radius: 50%;
-    padding: 0.25rem;
+
+    >a >svg{
+        text-align: center
+    }
+
     &:hover {
         background-color: color-mix(in srgb, var(--grey), transparent 80%);
     }

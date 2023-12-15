@@ -10,41 +10,40 @@ function HeaderDesktop() {
   const { headerLinks } = arrays
 
   return (
-    <header className='index-layout full'>
-      <div className='flex justify-between flex-row top-header'>
-        <div className="logo">
-          <Link href='/'>Yomama</Link>
-        </div>
-        <div className='flex flex-row main-input'>
+    <header className='index-layout'>
+      <section className='top-header'>
+        <button className="logo-btn">Yomama</button>
+        <div className='main-input'>
           <HeaderFilter />
         </div>
-        <div className='flex flex-row header-nav'>
+
+        <div className='header-nav'>
           <div>
-            <Link href='/'>
-              <button className='round-btn'>
+            <button className='round-btn'>
+              <Link href='/'>
                 {icons.userIcon}
-              </button>
-            </Link>
+              </Link>
+            </button>
           </div>
           <div>
-            <Link href='/'>
-              <button className='round-btn'>
+            <button className='round-btn'>
+              <Link href='/'>
                 {icons.heartIcon}
-              </button>
-            </Link>
+              </Link>
+            </button>
           </div>
           <div>
-            <Link href='/'>
-              <button className='round-btn'>
+            <button className='round-btn'>
+              <Link href='/'>
                 {icons.shoppingIcon}
-              </button>
-            </Link>
+              </Link>
+            </button>
           </div>
         </div>
-      </div>
-      <div className='break-line full'></div>
-      <div className='bottom-header flex'>
-        <ul className='flex flex-row'>
+      </section>
+      <div className='header-break full'></div>
+      <div className='bottom-header'>
+        <ul className=''>
           {headerLinks.map((link, idx) => (
             <li key={idx}>
               <Link href='/'>

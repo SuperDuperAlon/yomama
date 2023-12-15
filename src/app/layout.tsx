@@ -1,3 +1,5 @@
+import { Cinzel } from 'next/font/google'
+
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import '@/styles/globals.scss'
@@ -6,8 +8,6 @@ export const metadata = {
   title: 'Yomama',
   description: 'Buy flowers for Yomama',
 }
-
-
 
 export default function RootLayout({
   children,
@@ -19,13 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className=''>
-        <main className='index-layout'>
-          <Header/>
-          <section className='main-page'>
+        <Header />
+        <main className=''>
+          <>
             {children}
-          </section>
-          <Footer />
+          </>
         </main>
+        <Footer />
       </body>
     </html>
   )

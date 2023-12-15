@@ -1,6 +1,8 @@
 body {
     background-color: var(--white);
-    font-family: 'raleway', sans-serif
+    font-family: 'raleway', sans-serif;
+    // box-sizing: 0;
+    margin: 0;
 }
 
 td, th {
@@ -21,3 +23,13 @@ th {
     outline: none;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
