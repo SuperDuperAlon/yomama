@@ -1,17 +1,14 @@
 import Link from 'next/link'
-import React from 'react'
 
 const MainHero = () => {
     return (
-        <div className="hero">
+        <div className="hero full">
             <div className="hero-img">
                 <div className='center'>
                     <div className='text-white'>buy flowers for yomama</div>
-                    <button>
-                        <Link href='/'>
+                    <Link href='/'>
                         To our catalogue
-                        </Link>
-                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
