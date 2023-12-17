@@ -5,7 +5,7 @@ function Footer() {
   const { footerContact, footerSocialIcons, footerInfo } = arrays
 
   return (
-    <footer className=''>
+    <footer className='index-layout'>
       <div className='footer-container'>
         <div>Yomama</div>
         <div>Contact
@@ -16,12 +16,12 @@ function Footer() {
                 <div className='number'>{contact.desc}</div>
               </li>
             ))}
-            <li className='flex flex-row py-2'>
+            <li className="footer__social-icons">
               {
                 footerSocialIcons.map((icon, idx) => (
-                  <div key={idx}>
+                  <div key={idx} >
                     <a href={icon.desc} target='_blank'>
-                      {/* <div className='text-xl mr-2 py-2'>{icon.icon}</div> */}
+                      {icon.icon}
                     </a>
                   </div>
                 ))
@@ -32,7 +32,7 @@ function Footer() {
         <div>Information
           <ul>
             {footerInfo.map((info, idx) => (
-              <li key={idx} className='flex flex-row gap-3'>
+              <li key={idx} className=''>
                 {info.content}
               </li>
             ))}
@@ -40,7 +40,7 @@ function Footer() {
         </div>
         <div>
           <a href="https://wa.me/972504438778" target='_blank' className='white-sqr-btn'>
-            {/* <button>Whatsapp</button> */}
+            Whatsapp
           </a>
         </div>
       </div>

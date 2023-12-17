@@ -8,13 +8,17 @@ import Link from "next/link"
 import { appService } from '@/storage/appwrite'
 import { icons } from '@/styles/assets/icons/icons'
 
+import MainProductList_Card from '@/components/MainProductList_Card'
+
 import ScreenWidthListener from "@/lib/screenSizeCalculator"
 
 const MainProductList = () => {
     const [flowers, setFlowers] = useState<Flower[]>([])
 
     const screenSize = ScreenWidthListener()
-    const numOfFlowers = screenSize > 890 ? 6 : 4
+    // const numOfFlowers = screenSize > 890 ? 6 : 4
+    const numOfFlowers = flowers.length + 1
+    
 
     useEffect(() => {
         async function loadFlowers() {
@@ -33,32 +37,30 @@ const MainProductList = () => {
     if (!flowers) return <div>There are no flowers</div>
     else return (
         <>
-            <div className='index-layout '>
-                <div className='mb-4 hidden md:flex justify-between'>
-                    <div className="flex items-center">Our Products</div>
-                    {/* <Link href="/" className="white-sqr-btn">
-                        <button>To the Catalogue</button>
-                    </Link> */}
-                </div>
+            <div className='main-slider-header'>
+                <div className="">Our Products</div>
+                <Link href="/" className="white-sqr-btn">
+                    To the Catalogue
+                </Link>
             </div>
 
-            <div className="index-layout main-card">
-                <ul className="flex justify-between gap-x-4">
+            <div className="right-fill">
+                <div className="main-slider">
                     {flowers.map((flower, idx) => {
                         if (idx < numOfFlowers) {
                             return (
                                 <>
-                                    <Link href='/'>
-                                        <li key={idx} className="flex flex-col">
+                                    <Link href={`/`}>
+                                        <div key={idx} className="main-slider__card">
                                             <Image
                                                 src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
+                                                className=""
                                                 width={180}
                                                 height={120}
                                                 alt="flower name"
                                                 loading="lazy"
-                                                // layout="responsive"
                                             />
-                                            <div className="flex flex-row justify-between py-4">
+                                            <div className="">
                                                 <div className="flex flex-col main-card-desc">
                                                     <div className="capitalize">{flower.name}</div>
                                                     <div className="align-bottom number">${flower.price}</div>
@@ -69,13 +71,13 @@ const MainProductList = () => {
                                                     <button className="round-btn">{icons.shoppingIcon}</button>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </div>
                                     </Link>
                                 </>
-                                )
+                            )
                         }
                     })}
-                </ul>
+                </div>
             </div>
         </>
     )

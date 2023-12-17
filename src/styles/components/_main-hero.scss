@@ -1,3 +1,5 @@
+// Section 1 - Hero
+
 .hero {
     min-height: 75vh;
 }
@@ -24,6 +26,8 @@
     }
 }
 
+// Section 1 - Icons
+
 .main-icon-list {
     padding: 2rem 0;
     display: flex;
@@ -47,38 +51,58 @@
             margin: 0.5rem 0;
         }
     }
-
-
 }
 
-.main-card {
+// Section 3 - Slider Header
 
-    /* padding: 0.5rem 0; */
-    & .main-card-desc {
+.main-slider-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+
+    >:first-child {
         display: flex;
-
-        >* {
-            display: flex;
-            align-items: center;
-        }
+        align-items: center;
     }
+}
 
-    & .main-card-icons {
+// Srction 4 - Slider
+
+.main-slider {
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    gap: 60px;
+
+    .main-slider__card {
         display: flex;
-        font-size: 1.33rem;
-        gap: 0.25rem;
-        height: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
 
-        >* {
-            display: flex;
-            height: fit-content;
-            align-self: center;
-            padding: 0.25rem;
-            border-radius: 45px;
+        >img {
+            height: 240px;
+            width: 180px;
         }
 
-        > :last-of-type {
-            background-color: var(--teal);
+        :last-child {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            >:first-child {
+                display: flex;
+                flex-direction: column;
+            }
+
+            >:last-child {
+                display: flex;
+                align-items: center;
+            }
+
+
+            >* {
+                gap: 0.25rem;
+            }
         }
     }
 
