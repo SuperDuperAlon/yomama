@@ -1,6 +1,6 @@
 .index-layout {
     display: grid;
-    grid-template-columns: 1fr minmax(1140px, auto) 1fr;
+    grid-template-columns: 1fr minmax(1440px, auto) 1fr;
 
     > * {
         grid-column: 2;
