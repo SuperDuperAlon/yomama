@@ -4,8 +4,21 @@ import { icons } from '@/styles/assets/icons/icons'
 import { arrays } from '@/lib/arrays'
 
 import HeaderFilter from './HeaderFilter'
+import { flowerService } from '@/services/flower.service';
+import { useState } from 'react';
+import { appService } from '@/storage/appwrite';
 
 function HeaderDesktop() {
+
+
+  const [filterBy, setFilterBy] = useState(appService.getDefaultFilter());
+
+  function onSetFilter(filterBy: any) {
+    setFilterBy(filterBy);
+  }
+
+  console.log(filterBy);
+  
 
   const { headerLinks } = arrays
 
@@ -14,7 +27,7 @@ function HeaderDesktop() {
       <section className='top-header'>
         <button className="logo-btn">Yomama</button>
         <div className='main-input'>
-          <HeaderFilter />
+          <HeaderFilter onSetFilter={onSetFilter}/>
         </div>
 
         <div className='header-nav'>

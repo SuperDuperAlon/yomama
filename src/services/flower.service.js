@@ -5,12 +5,12 @@ const STORAGE_KEY = 'flowerDB'
 _createFlowers()
 
 export const flowerService = {
-    query,
+    // query,
     // get,
-    remove,
+    // remove,
     // save,
     // getEmptyFlower,
-    // getDefaultFilter,
+    getDefaultFilter
     // getDefaultReview,
     // saveReview,
     // removeReview
@@ -67,7 +67,7 @@ function getEmptyFlower(name = '') {
 // }
 
 function getDefaultFilter() {
-    return { txt: '' }
+    return { name: '' }
 }
 // function getDefaultFilter() {
 //     return { txt: '', minPrice: '', pageCount: '', minYear: '' }

@@ -1,6 +1,5 @@
-* Set responsive sizes
-* write an algorithm for adjusting number of cards based on the width of the screen
 * add main filter
 * set authentication
 * Calculate header size
 * Create slider buttons for cards
+* Card Component

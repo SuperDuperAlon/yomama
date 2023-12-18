@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { appService } from '@/storage/appwrite'
+import { flowerService } from "@/services/flower.service"
 import { icons } from '@/styles/assets/icons/icons'
 
 import MainProductList_Card from '@/components/MainProductList_Card'
@@ -16,6 +17,7 @@ const MainProductList = () => {
     const [flowers, setFlowers] = useState<Flower[]>([])
 
     const screenSize = ScreenWidthListener()
+    
     // const numOfFlowers = screenSize > 890 ? 6 : 4
     const numOfFlowers = flowers.length + 1
     
@@ -23,9 +25,7 @@ const MainProductList = () => {
     useEffect(() => {
         async function loadFlowers() {
             try {
-                const retrievedFlowers: any = await appService.query()
-                console.log(typeof retrievedFlowers);
-
+                const retrievedFlowers: any = await appService.queryTop()
                 setFlowers(retrievedFlowers)
             } catch (error) {
                 console.error('Error loading flowers:', error)

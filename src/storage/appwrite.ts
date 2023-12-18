@@ -9,12 +9,25 @@ client
   .setProject(process.env.NEXT_PUBLIC_PROJECT_ID!) // Your project ID
   ;
 
-async function query() {
+async function query(filterBy: any) {
   try {
-    // console.log(filterBy);
+    console.log(filterBy);
+    const query = await databases.listDocuments(process.env.NEXT_PUBLIC_DATABASE_ID!, process.env.NEXT_PUBLIC_COLLECTION_ID!,
+      [
+        Query.startsWith('name', filterBy),
+      ]
+    );
+    const data = query.documents
+    return data
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function queryTop() {
+  try {
     const query = await databases.listDocuments(process.env.NEXT_PUBLIC_DATABASE_ID!, process.env.NEXT_PUBLIC_COLLECTION_ID!,
       // [
-      //   Query.equal('name', filterBy),
+      //   Query.startsWith('name', filterBy),
       // ]
     );
     const data = query.documents
@@ -74,11 +87,17 @@ async function update(id: string) {
   }
 }
 
+function getDefaultFilter() {
+  return { name: '' }
+}
+
 
 export const appService = {
   query,
   create,
   remove,
   update,
-  getById
+  getById,
+  queryTop,
+  getDefaultFilter
 }
