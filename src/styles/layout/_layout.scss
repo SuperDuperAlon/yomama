@@ -1,6 +1,7 @@
 .index-layout {
     display: grid;
-    grid-template-columns: 1fr minmax(1440px, auto) 1fr;
+    grid-template-columns: minmax($pad-24, 1fr) minmax(250px, $small-breakpoint) minmax($pad-24,
+    1fr);
 
     > * {
         grid-column: 2;
@@ -13,4 +14,20 @@
     .right-fill {
         grid-column: 2 / span 2;
     }
+
+    @include for-tablet-layout {
+        grid-template-columns: minmax($pad-20, 1fr) minmax(auto, $medium-breakpoint) minmax($pad-20,
+            1fr);
+      }
+    
+      @include for-normal-layout {
+        grid-template-columns: minmax($pad-20, 1fr) minmax(auto, $large-breakpoint) minmax($pad-20,
+            1fr);
+      }
+    
+      @include for-wide-layout {
+        grid-template-columns:
+          minmax($pad-24,1fr) minmax($x-large-breakpoint, 1700px) minmax($pad-24,1fr);
+          // minmax(24px, 1fr) minmax(auto, $x-large-breakpoint) minmax(24px, 1fr)
+      }
 }

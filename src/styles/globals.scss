@@ -1,9 +1,7 @@
-/* Layout */
-@import '@/styles/layout/layout.scss';
-
 // /* Setup */
 @import '@/styles/setup/typography.scss';
 @import '@/styles/setup/functions.scss';
+@import '@/styles/setup/mixins.scss';
 @import '@/styles/setup/variables.scss';
 
 // /* Base */
@@ -17,6 +15,7 @@
 @import '@/styles/components/admin-page.scss';
 @import '@/styles/components/main-hero.scss';
 
-
+/* Layout */
+@import '@/styles/layout/layout.scss';
 
 

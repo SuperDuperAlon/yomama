@@ -5,3 +5,27 @@
     --white: #fdfefe;
     --black: #0a0a0a;
 }
+
+// Padding
+$pad-8: 8px;
+$pad-5: 5px;
+$pad-15: 15px;
+$pad-12: 12px;
+$pad-20: 20px;
+$pad-24: 24px;
+$pad-40:40px;
+$pad-80:80px;
+
+// Breakpoints
+$small-breakpoint: 605px;
+$medium-breakpoint: 750px;
+$screen-wide-950: 950px;
+$large-breakpoint: 1000px;
+$x-large-breakpoint: 1200px;
+
+
+
+$padded-s: $small-breakpoint + 2 * $pad-24;
+$padded-m: $medium-breakpoint + 2 * $pad-20;
+$padded-l: $large-breakpoint + 2 * $pad-20;
+$padded-xl: $x-large-breakpoint + 2 * $pad-40;
