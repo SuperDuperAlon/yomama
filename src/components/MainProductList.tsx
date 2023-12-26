@@ -17,9 +17,8 @@ const MainProductList = () => {
     const [flowers, setFlowers] = useState<Flower[]>([])
 
     const screenSize = ScreenWidthListener()
-    
-    // const numOfFlowers = screenSize > 890 ? 6 : 4
-    const numOfFlowers = flowers.length + 1
+
+    const numOfFlowers = 8
     
 
     useEffect(() => {

@@ -1,7 +1,8 @@
-import { Cinzel } from 'next/font/google'
+import { Suspense } from 'react'
 
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import Loading from '@/components/Loading'
 import '@/styles/globals.scss'
 
 export const metadata = {
@@ -19,13 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className=''>
-        <Header />
-        <main className='index-layout'>
-          <>
-            {children}
-          </>
-        </main>
-        <Footer />
+        <Suspense fallback={<Loading />}>
+          <Header />
+          <main className='index-layout'>
+            <>
+
+              {children}
+
+            </>
+          </main>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   )

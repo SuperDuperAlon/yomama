@@ -6,13 +6,13 @@ import { appService } from '@/storage/appwrite'
 
 const Catalogue = () => {
     const [flowers, setFlowers] = useState<Flower[]>([])
-    const filterBy = 'rho'
+    const filterBy = appService.getDefaultFilter()
 
 
     useEffect(() => {
         async function loadFlowers(filterBy: any) {
             try {
-                const retrievedFlowers: any = await appService.query(filterBy)
+                const retrievedFlowers: any = await appService.query(filterBy.name)
                 setFlowers(retrievedFlowers)
             } catch (error) {
                 console.error('Error loading flowers:', error)
@@ -29,7 +29,7 @@ const Catalogue = () => {
             {flowers.map((flower, idx) => {
                 return (
                     <>
-                      <div>{flower.name}</div>
+                      <div key={idx}>{flower.name}</div>
                     </>
                 )
 

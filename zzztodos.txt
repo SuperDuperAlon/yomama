@@ -1,4 +1,6 @@
-* add main filter
+* homepage responsive
+* header filter
+* flower list page
 * set authentication
 * Calculate header size
 * Create slider buttons for cards
