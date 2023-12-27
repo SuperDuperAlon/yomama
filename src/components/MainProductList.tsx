@@ -11,12 +11,12 @@ import { icons } from '@/styles/assets/icons/icons'
 
 import MainProductList_Card from '@/components/MainProductList_Card'
 
-import ScreenWidthListener from "@/lib/screenSizeCalculator"
+import {useMediaQuery} from "@/lib/useMediaQuery"
 
 const MainProductList = () => {
     const [flowers, setFlowers] = useState<Flower[]>([])
 
-    const screenSize = ScreenWidthListener()
+    // const screenSize = useMediaQuery()
 
     const numOfFlowers = 8
     

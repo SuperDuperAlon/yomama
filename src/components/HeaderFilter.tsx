@@ -9,8 +9,6 @@ const HeaderFilter = ({ onSetFilter }: any) => {
     const [filterByToEdit, setFilterByToEdit] = useState(
         appService.getDefaultFilter()
     );
-
-    console.log(filterByToEdit);
     
     const elInputRef = useRef<HTMLInputElement>(null);;
 
