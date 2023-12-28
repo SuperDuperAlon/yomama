@@ -11,24 +11,25 @@ const HeaderMobile = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     const toggleMobileNav = () => {
+        console.log(isOpen)
         setIsOpen(!isOpen)
     }
 
     return (
         <header className='index-layout full'>
-            <div className='flex flex-row justify-between'>
-                <div className='my-4'>
+            <div className='mobile_header__container'>
+                <div>
                     Yomama
                 </div>
-                <div className='my-4'>
+                <div>
                     <button onClick={toggleMobileNav}>
                         <AiOutlineMenu />
                     </button>
                 </div>
-                <div className={`absolute left-0 bg-white h-screen w-screen ease-in-out duration-300 ${isOpen ? '-translate-y-0' : '-translate-y-full'}`}>
-                    <button className='absolute right-10 top-4 text-xl' onClick={toggleMobileNav}>X</button>
-                    <div className='flex h-full'>
-                        <ul className='flex flex-col clean-list justify-center items-center w-full gap-y-1.5 text-2xl'>
+                <div className={`mobile_header__menu ${isOpen ? 'menu_open' : 'menu_close'}`}>
+                    <button onClick={toggleMobileNav}>X</button>
+                    <div>
+                        <ul className='mobile_header__list'>
                             {headerLinks.map((link, idx) => (
                                 <li key={idx}>
                                     <Link href='/'>
