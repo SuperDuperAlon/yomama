@@ -5,7 +5,7 @@ const MainHero = () => {
         <div className="hero full">
             <div className="hero-img">
                 <div className='center'>
-                    <div className='text-white'>buy flowers for yomama</div>
+                    <div className='text-white'>Buy Yomama Flowers</div>
                     <Link href='/'>
                         To our catalogue
                     </Link>

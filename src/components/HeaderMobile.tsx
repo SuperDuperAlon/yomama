@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { arrays } from '@/lib/arrays'
+import HeaderFilter from './HeaderFilter'
 
 const HeaderMobile = () => {
 
@@ -38,6 +39,8 @@ const HeaderMobile = () => {
                                 </li>
                             ))}
                         </ul>
+
+                        {/* <HeaderFilter /> */}
                     </div>
                 </div>
             </div>

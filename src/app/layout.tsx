@@ -7,7 +7,7 @@ import '@/styles/globals.scss'
 
 export const metadata = {
   title: 'Yomama',
-  description: 'Buy flowers for Yomama',
+  description: 'Buy Yomama Flowers',
 }
 
 export default function RootLayout({
