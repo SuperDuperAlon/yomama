@@ -66,11 +66,11 @@
     }
 }
 
-// Srction 4 - Slider
+// Section 4 - Slider
 
 .main-slider {
     display: flex;
-    overflow: hidden;
+    overflow: scroll;
     flex-direction: row;
     gap: 60px;
 

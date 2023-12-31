@@ -18,7 +18,7 @@ const HeaderMobile = () => {
     return (
         <header className='index-layout full'>
             <div className='mobile_header__container'>
-                <div>
+                <div className='logo-btn'>
                     Yomama
                 </div>
                 <div>
