@@ -2,15 +2,21 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { icons } from '@/styles/assets/icons/icons'
-import { flowerService } from '@/services/flower.service'
 import { appService } from '@/storage/appwrite'
 
-const HeaderFilter = ({ onSetFilter }: any) => {
+const HeaderFilter = () => {
+
+    const [filterBy, setFilterBy] = useState(appService.getDefaultFilter());
+
+    function onSetFilter(filterBy: any) {
+        setFilterBy(filterBy);
+    }
+
     const [filterByToEdit, setFilterByToEdit] = useState(
         appService.getDefaultFilter()
     );
-    
-    const elInputRef = useRef<HTMLInputElement>(null);;
+
+    const elInputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         elInputRef.current?.focus();
@@ -36,17 +42,19 @@ const HeaderFilter = ({ onSetFilter }: any) => {
 
     return (
         <>
-            {icons.magnifyingGlassIcon}
-            <input
-                type="text"
-                name='name'
-                id='flowerName'
-                className=''
-                placeholder='Search'
-                onChange={handleChange}
-                value={filterByToEdit.name}
-                ref={elInputRef}
-            />
+            <div className='main-input'>
+                {icons.magnifyingGlassIcon}
+                <input
+                    type="text"
+                    name='name'
+                    id='flowerName'
+                    className=''
+                    placeholder='Search'
+                    onChange={handleChange}
+                    value={filterByToEdit.name}
+                    ref={elInputRef}
+                />
+            </div>
         </>
     )
 }

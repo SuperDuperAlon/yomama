@@ -10,25 +10,13 @@ import { appService } from '@/storage/appwrite';
 
 function HeaderDesktop() {
 
-
-  const [filterBy, setFilterBy] = useState(appService.getDefaultFilter());
-
-  function onSetFilter(filterBy: any) {
-    setFilterBy(filterBy);
-  }
-
-  console.log(filterBy);
-  
-
   const { headerLinks } = arrays
 
   return (
     <header className='index-layout'>
       <section className='top-header'>
         <button className="logo-btn">Yomama</button>
-        <div className='main-input'>
-          <HeaderFilter onSetFilter={onSetFilter}/>
-        </div>
+        <HeaderFilter />
 
         <div className='header-nav'>
           <div>

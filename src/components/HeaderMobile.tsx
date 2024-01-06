@@ -40,7 +40,7 @@ const HeaderMobile = () => {
                             ))}
                         </ul>
 
-                        {/* <HeaderFilter /> */}
+                        <HeaderFilter />
                     </div>
                 </div>
             </div>
