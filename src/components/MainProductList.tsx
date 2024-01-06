@@ -48,9 +48,9 @@ const MainProductList = () => {
                     {flowers.map((flower, idx) => {
                         if (idx < numOfFlowers) {
                             return (
-                                <>
-                                    <Link href={`/`}>
-                                        <div key={idx} className="main-slider__card">
+                                <div key={idx}>
+                                    <Link  href={`/catalogue/${flower.$id}`}>
+                                        <div className="main-slider__card">
                                             <Image
                                                 src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
                                                 className=""
@@ -72,7 +72,7 @@ const MainProductList = () => {
                                             </div>
                                         </div>
                                     </Link>
-                                </>
+                                </div>
                             )
                         }
                     })}
