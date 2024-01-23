@@ -1,8 +1,12 @@
+import Login from '@/components/auth/LoginCmp'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+    <h1>Login</h1>
+    <Login />
+  </div>
   )
 }
 
