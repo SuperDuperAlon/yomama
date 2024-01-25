@@ -4,17 +4,18 @@ const client = new Client();
 
 const databases = new Databases(client);
 
+
 client
   .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
   .setProject(process.env.NEXT_PUBLIC_PROJECT_ID!) // Your project ID
   ;
 
-async function query(filterBy: any) {
+async function query(filterBy: FilterBy) {
   try {
-    console.log(filterBy);
+    console.log(filterBy.name);
     const query = await databases.listDocuments(process.env.NEXT_PUBLIC_DATABASE_ID!, process.env.NEXT_PUBLIC_COLLECTION_ID!,
       [
-        Query.startsWith('name', filterBy),
+        Query.startsWith('name', filterBy.name),
       ]
     );
     const data = query.documents
@@ -88,8 +89,9 @@ async function update(id: string) {
 }
 
 function getDefaultFilter() {
-  return { name: '' }
+  return { name: '', price: 0 }
 }
+
 
 
 export const appService = {
