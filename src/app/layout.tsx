@@ -24,9 +24,7 @@ export default function RootLayout({
           <Header />
           <main className='index-layout'>
             <>
-
               {children}
-
             </>
           </main>
           <Footer />
