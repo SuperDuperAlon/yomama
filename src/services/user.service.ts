@@ -10,7 +10,7 @@ client
 
 async function login(email: string, password: string) {
     try {
-      const user = await account.createEmailSession(email, password)
+      const user = await account.createEmailSession(email, password )
       console.log(user);
     } catch (error){
       console.log(error);
