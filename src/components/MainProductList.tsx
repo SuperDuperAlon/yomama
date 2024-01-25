@@ -11,7 +11,7 @@ import { icons } from '@/styles/assets/icons/icons'
 
 import MainProductList_Card from '@/components/MainProductList_Card'
 
-import {useMediaQuery} from "@/lib/useMediaQuery"
+import { useMediaQuery } from "@/lib/useMediaQuery"
 
 const MainProductList = () => {
     const [flowers, setFlowers] = useState<Flower[]>([])
@@ -20,12 +20,14 @@ const MainProductList = () => {
 
     const numOfFlowers = 8
     
+    // console.log(flowers);
+    
 
     useEffect(() => {
         async function loadFlowers() {
             try {
-                const retrievedFlowers: any = await appService.queryTop()
-                setFlowers(retrievedFlowers)
+                const data = await appService.queryTop()
+                if (data) setFlowers(data)
             } catch (error) {
                 console.error('Error loading flowers:', error)
             }
@@ -49,7 +51,7 @@ const MainProductList = () => {
                         if (idx < numOfFlowers) {
                             return (
                                 <div key={idx}>
-                                    <Link  href={`/catalogue/${flower.$id}`}>
+                                    <Link href={`/catalogue/${flower.$id}`}>
                                         <div className="main-slider__card">
                                             <Image
                                                 src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
