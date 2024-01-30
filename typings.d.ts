@@ -16,7 +16,3 @@ interface FilterBy {
     name: string;
     price: number;
 }
-
-// interface Flowers {
-//     flowers: Flower[];
-// }
