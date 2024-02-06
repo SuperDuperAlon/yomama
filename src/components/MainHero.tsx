@@ -6,7 +6,7 @@ const MainHero = () => {
             <div className="hero-img">
                 <div className='center'>
                     <div className='text-white'>Buy Yomama Flowers</div>
-                    <Link href='/'>
+                    <Link href='/catalogue'>
                         To our catalogue
                     </Link>
                 </div>
