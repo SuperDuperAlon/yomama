@@ -12,7 +12,6 @@ client
 
 async function query(filterBy: FilterBy) {
   try {
-    console.log(filterBy.name);
     const query = await databases.listDocuments(process.env.NEXT_PUBLIC_DATABASE_ID!, process.env.NEXT_PUBLIC_COLLECTION_ID!,
       [
         Query.startsWith('name', filterBy.name),
@@ -24,13 +23,15 @@ async function query(filterBy: FilterBy) {
     console.log(error);
   }
 }
-async function queryTop() {
+async function queryTop(filterBy: any) {
+  console.log(filterBy);
   try {
     const query = await databases.listDocuments(process.env.NEXT_PUBLIC_DATABASE_ID!, process.env.NEXT_PUBLIC_COLLECTION_ID!,
-      // [
-      //   Query.startsWith('name', filterBy),
-      // ]
+      [
+        Query.startsWith('name', filterBy.name),
+      ]
     );
+    console.log(query);
     const data = query.documents
     return data
   } catch (error) {
