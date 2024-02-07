@@ -13,7 +13,7 @@ const CatalogueFilter = ({ onSetFilter }: any) => {
   const elInputRef = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {
-    elInputRef.current.focus();
+    elInputRef.current?.focus();
   }, []);
 
   useEffect(() => {
