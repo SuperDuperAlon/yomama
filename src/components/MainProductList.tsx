@@ -26,7 +26,7 @@ const MainProductList = () => {
     useEffect(() => {
         async function loadFlowers() {
             try {
-                const data = await appService.queryTop()
+                const data = await flowerService.query()
                 if (data) setFlowers(data)
             } catch (error) {
                 console.error('Error loading flowers:', error)

@@ -20,10 +20,10 @@ const CatalogueFilter = ({ onSetFilter }: any) => {
     onSetFilter(filterByToEdit);
   }, [filterByToEdit]);
 
-  function handleChange({ target }:any) {
+  function handleChange({ target }: any) {
     let { value, name: field, type } = target;
-    console.log(value);
     value = type === "number" ? +value : value;
+    console.log(typeof value);
     setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }));
   }
 
@@ -39,7 +39,7 @@ const CatalogueFilter = ({ onSetFilter }: any) => {
       <div className="flower-list-filter">
         <form onSubmit={onSubmitFilter}>
           <label htmlFor='name'>Name:</label>
-          <input 
+          <input
             type="text"
             id='name'
             name='name'
@@ -47,15 +47,23 @@ const CatalogueFilter = ({ onSetFilter }: any) => {
             onChange={handleChange}
             ref={elInputRef}
           />
-        {/* <label>
+          <input
+            type="number"
+            id='price'
+            name='price'
+            placeholder='by price'
+            onChange={handleChange}
+            ref={elInputRef}
+          />
+          {/* <label>
         Price:
         <input type="number"
         value={priceFilter}
         onChange={handlePriceChange}
         />
       </label> */}
-      </form>
-    </div>
+        </form>
+      </div>
     </section >
   )
 }

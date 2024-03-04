@@ -5,7 +5,7 @@ const STORAGE_KEY = 'flowerDB'
 _createFlowers()
 
 export const flowerService = {
-    // query,
+    query,
     // get,
     // remove,
     // save,
@@ -86,46 +86,45 @@ function _loadFlowersFromStorage() {
 
 function _createFlowers() {
     if (typeof window !== 'undefined') {
-        let flowers = storageService.loadFromStorage(STORAGE_KEY)
+        var flowers = storageService.loadFromStorage(STORAGE_KEY)
         if (!flowers || !flowers.length) {
             flowers = [
-                {
-                    name: 'rose',
-                    _id: _makeId(),
-                    price: 20,
-                },
-                {
 
-                    name: 'lilac',
-                    _id: _makeId(),
-                    price: 20,
-                },
-                {
-
-                    name: 'lily',
-                    _id: _makeId(),
-                    price: 20,
-                },
-                {
-
-                    name: 'orchid',
-                    _id: _makeId(),
-                    price: 20,
-                }
-
+                    { name: "Rose" },
+                    { name: "Tulip" },
+                    { name: "Daisy" },
+                    { name: "Sunflower" },
+                    { name: "Lily" },
+                    { name: "Orchid" },
+                    { name: "Daffodil" },
+                    { name: "Carnation" },
+                    { name: "Hydrangea" },
+                    { name: "Peony" },
+                    { name: "Poppy" },
+                    { name: "Chrysanthemum" }
+                
             ]
-            flowers.forEach(flower => {
-            })
+            flowers.forEach(flower => 
+                {
+                    flower._id = _makeId()
+                    flower.price = _makePrice()
+
+                })
             storageService.saveToStorage(STORAGE_KEY, flowers)
         }
     }
 }
 
-    function _makeId(length = 5) {
-        var text = ''
-        var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-        for (var i = 0; i < length; i++) {
-            text += possible.charAt(Math.floor(Math.random() * possible.length))
-        }
-        return text
+function _makeId(length = 5) {
+    var text = ''
+    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    for (var i = 0; i < length; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length))
     }
+    return text
+}
+
+function _makePrice() {
+    const price = Math.floor(Math.random() * 100)
+    return price
+}
