@@ -19,6 +19,7 @@ export const flowerService = {
 
 async function query(filterBy, sortBy) {
     console.log(filterBy);
+    console.log(sortBy);
     if (typeof window === 'undefined' || !window.localStorage) return console.log('loading')
     else {
         var flowers = storageService.loadFromStorage(STORAGE_KEY)
@@ -29,11 +30,22 @@ async function query(filterBy, sortBy) {
         if (filterBy.price) {
             flowers = flowers.filter(flower => flower.price > filterBy.price)
         }
-        if (sortBy.name) {
+        if (sortBy.by = 'name') {
             flowers = flowers.sort((a, b) => {
-                if (a.name < b.name) return -1;
-                if (a.name > b.name) return 1;
-                return 0;
+                if (sortBy.asc) {
+                    return a.name.localeCompare(b.name)
+                } else {
+                    return b.name.localeCompare(a.name);
+                }
+            });
+        }
+        if (sortBy.by = 'price') {
+            flowers = flowers.sort((a, b) => {
+                if (sortBy.asc) {
+                    return a.price - b.price;
+                } else {
+                    return b.price - a.price;
+                }
             });
         }
         return flowers
@@ -70,7 +82,7 @@ function getDefaultFilter() {
 }
 
 function getDefaultSort() {
-    return { by: 'name', asc: true }
+    return { by: '', asc: true }
 }
 // function getDefaultFilter() {
 //     return { txt: '', minPrice: '', pageCount: '', minYear: '' }

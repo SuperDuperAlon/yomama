@@ -16,7 +16,7 @@ export function CatalogueSort({ sort, onSetSort }: any) {
 
     return <section>
         <button onClick={() => handleSortChange('name')}>By name</button>
-        {/* <button onClick={() => handleSortChange('price')}>By price</button> */}
+        <button onClick={() => handleSortChange('price')}>By price</button>
         <button onClick={handleDirectionChange}>Change direction {sort.asc ? '^' : 'v'}</button>
     </section>
 }
