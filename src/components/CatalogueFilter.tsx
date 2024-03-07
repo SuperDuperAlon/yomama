@@ -22,20 +22,18 @@ const CatalogueFilter = ({ onSetFilter }: any) => {
 
   function handleChange({ target }: any) {
     let { value, name: field, type } = target;
-    value = type === "number" ? +value : value;
-    console.log(typeof value);
+    value = type === "range" ? +value : value;
+    console.log(value);
     setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }));
   }
 
   function onSubmitFilter(ev: FormEvent<HTMLFormElement>) {
-    // update father cmp that filters change on submit
     ev.preventDefault();
     onSetFilter(filterByToEdit);
   }
 
   return (
     <section>
-
       <div className="flower-list-filter">
         <form onSubmit={onSubmitFilter}>
           <label htmlFor='name'>Name:</label>
@@ -47,21 +45,21 @@ const CatalogueFilter = ({ onSetFilter }: any) => {
             onChange={handleChange}
             ref={elInputRef}
           />
+          <label htmlFor='price'>Price:</label>
           <input
-            type="number"
+            type="range"
             id='price'
             name='price'
+            min="0"
+            max="100"
+            step="1"
             placeholder='by price'
             onChange={handleChange}
             ref={elInputRef}
           />
-          {/* <label>
-        Price:
-        <input type="number"
-        value={priceFilter}
-        onChange={handlePriceChange}
-        />
-      </label> */}
+          {/* <button onClick={() => sortBy('name')}>Sort by Name</button>
+          <button onClick={() => sortBy('price')}>Sort by Price</button> */}
+
         </form>
       </div>
     </section >

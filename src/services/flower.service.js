@@ -16,26 +16,35 @@ export const flowerService = {
     // removeReview
 }
 
-function query() {
+async function query(filterBy, sortBy) {
+    console.log(filterBy);
     if (typeof window === 'undefined' || !window.localStorage) return console.log('loading')
     else {
-        return storageService.loadFromStorage(STORAGE_KEY)
+        var flowers = storageService.loadFromStorage(STORAGE_KEY)
+        if (filterBy.name) {
+            const regex = new RegExp(filterBy.name, 'i')
+            flowers = flowers.filter(flower => regex.test(flower.name))
+
+        }
+        if(filterBy.price) {
+            flowers = flowers.filter(flower => flower.price > filterBy.price)
+        }
         // .then(flowers => {
-        //     if (filterBy.txt) {
-        //         const regex = new RegExp(filterBy.txt, 'i')
+        //     if (filterBy.name) {
+        //         const regex = new RegExp(filterBy.name, 'i')
         //         flowers = flowers.filter(flower => regex.test(flower.name))
         //     }
-        //     // if (filterBy.minPrice) {
-        //     //     flowers = flowers.filter(flower => flower.listPrice.amount >= filterBy.minPrice)
-        //     // }
-        //     // if (filterBy.pageCount) {
-        //     //     flowers = flowers.filter(flower => flower.pageCount <= filterBy.pageCount)
-        //     // }
-        //     // if (filterBy.minYear) {
-        //     //     flowers = flowers.filter(flower => filterBy.minYear >= utilService.getYearsDistance(flower.publishedDate))
-        //     // }
+        // if (filterBy.minPrice) {
+        //     flowers = flowers.filter(flower => flower.listPrice.amount >= filterBy.minPrice)
+        // }
+        // if (filterBy.pageCount) {
+        //     flowers = flowers.filter(flower => flower.pageCount <= filterBy.pageCount)
+        // }
+        // if (filterBy.minYear) {
+        //     flowers = flowers.filter(flower => filterBy.minYear >= utilService.getYearsDistance(flower.publishedDate))
+        // }
 
-        //     return flowers
+        return flowers
 
         // })
     }
@@ -67,7 +76,7 @@ function getEmptyFlower(name = '') {
 // }
 
 function getDefaultFilter() {
-    return { name: '' }
+    return { name: '', price: 29 }
 }
 // function getDefaultFilter() {
 //     return { txt: '', minPrice: '', pageCount: '', minYear: '' }
@@ -90,26 +99,25 @@ function _createFlowers() {
         if (!flowers || !flowers.length) {
             flowers = [
 
-                    { name: "Rose" },
-                    { name: "Tulip" },
-                    { name: "Daisy" },
-                    { name: "Sunflower" },
-                    { name: "Lily" },
-                    { name: "Orchid" },
-                    { name: "Daffodil" },
-                    { name: "Carnation" },
-                    { name: "Hydrangea" },
-                    { name: "Peony" },
-                    { name: "Poppy" },
-                    { name: "Chrysanthemum" }
-                
-            ]
-            flowers.forEach(flower => 
-                {
-                    flower._id = _makeId()
-                    flower.price = _makePrice()
+                { name: "Rose" },
+                { name: "Tulip" },
+                { name: "Daisy" },
+                { name: "Sunflower" },
+                { name: "Lily" },
+                { name: "Orchid" },
+                { name: "Daffodil" },
+                { name: "Carnation" },
+                { name: "Hydrangea" },
+                { name: "Peony" },
+                { name: "Poppy" },
+                { name: "Chrysanthemum" }
 
-                })
+            ]
+            flowers.forEach(flower => {
+                flower._id = _makeId()
+                flower.price = _makePrice()
+
+            })
             storageService.saveToStorage(STORAGE_KEY, flowers)
         }
     }

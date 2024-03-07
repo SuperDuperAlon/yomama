@@ -10,39 +10,31 @@ import { flowerService } from "@/services/flower.service";
 const Catalogue = () => {
     const [flowers, setFlowers] = useState<Flower[]>([])
     const [filterBy, setFilterBy] = useState(appService.getDefaultFilter())
-
-    // useEffect(() => {
-    //     async function loadFlowers() {
-    //         try {
-    //             const data = await appService.queryTop(filterBy)
-    //             setFlowers(data!)
-    //         } catch (error) {
-    //             console.error('Error loading flowers:', error)
-    //         }
-    //     }
-    //     loadFlowers()
-    // }, [filterBy])
+    const [sortBy, setSortBy] = useState(appService.getDefaultFilter())
 
     useEffect(() => {
         async function loadFlowers() {
             try {
-                const data = await flowerService.query()
+                const data = await flowerService.query(filterBy, sortBy)
                 if (data) setFlowers(data)
             } catch (error) {
                 console.error('Error loading flowers:', error)
             }
         }
         loadFlowers()
-    }, [])
+    }, [filterBy, sortBy])
 
     function onSetFilter(filterBy: any): void {
         setFilterBy(filterBy);
+    }
+    function onSetSort(sortBy: any): void {
+        setSortBy(sortBy);
     }
 
     if (!flowers) return <div>There are no flowers</div>
     else return (
         <>
-            <CatalogueFilter onSetFilter={onSetFilter} />
+            <CatalogueFilter onSetFilter={onSetFilter} onSetSort={onSetSort} />
             <CatalogueList flowers={flowers} />
         </>
     )
