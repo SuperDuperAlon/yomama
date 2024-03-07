@@ -1,22 +1,39 @@
-import { Account, Client } from "appwrite";
+let users: User[] = [];
+let currentUser: User | null = null;
 
-const client = new Client();
-const account = new Account(client);
+export const userService = {
+  signUp,
+  login,
+  logout
+}
 
-client
-  .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
-  .setProject(process.env.NEXT_PUBLIC_PROJECT_ID!) // Your project ID
-  ;
-
-async function login(email: string, password: string) {
-    try {
-      const user = await account.createEmailSession(email, password )
-      console.log(user);
-    } catch (error){
-      console.log(error);
-    }
+function signUp(username: string, password: string, email: string): void {
+  const userExists = users.some(user => user.username === username);
+  if (userExists) {
+    console.log(`User ${username} already exists.`);
+    return;
   }
 
-  export const userService = {
-    login
+  const newUser: User = { username, password, email };
+  users.push(newUser);
+  console.log(`User ${username} signed up successfully!`);
+}
+
+function login(username: string, password: string): void {
+  const user = users.find(u => u.username === username && u.password === password);
+  if (user) {
+    currentUser = user;
+    console.log(`User ${username} logged in successfully!`);
+  } else {
+    console.log(`Invalid username or password.`);
   }
+}
+
+function logout(): void {
+  if (currentUser) {
+    console.log(`User ${currentUser.username} logged out successfully!`);
+    currentUser = null;
+  } else {
+    console.log(`No user is currently logged in.`);
+  }
+}
