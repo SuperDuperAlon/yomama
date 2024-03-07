@@ -5,7 +5,7 @@ import React, { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'reac
 //   onFilterChange: (filterOption: any) => void;
 // }
 
-const CatalogueFilter = ({ onSetFilter }: any) => {
+const CatalogueFilter = ({ onSetFilter, onSetSort }: any) => {
 
   const [filterByToEdit, setFilterByToEdit] = useState(
     appService.getDefaultFilter()
@@ -15,6 +15,10 @@ const CatalogueFilter = ({ onSetFilter }: any) => {
   useEffect(() => {
     elInputRef.current?.focus();
   }, []);
+
+  useEffect(() => {
+    onSetFilter(filterByToEdit);
+  }, [filterByToEdit]);
 
   useEffect(() => {
     onSetFilter(filterByToEdit);
@@ -57,9 +61,6 @@ const CatalogueFilter = ({ onSetFilter }: any) => {
             onChange={handleChange}
             ref={elInputRef}
           />
-          {/* <button onClick={() => sortBy('name')}>Sort by Name</button>
-          <button onClick={() => sortBy('price')}>Sort by Price</button> */}
-
         </form>
       </div>
     </section >

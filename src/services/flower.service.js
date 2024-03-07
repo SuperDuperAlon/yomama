@@ -10,7 +10,8 @@ export const flowerService = {
     // remove,
     // save,
     // getEmptyFlower,
-    getDefaultFilter
+    getDefaultFilter,
+    getDefaultSort
     // getDefaultReview,
     // saveReview,
     // removeReview
@@ -24,29 +25,18 @@ async function query(filterBy, sortBy) {
         if (filterBy.name) {
             const regex = new RegExp(filterBy.name, 'i')
             flowers = flowers.filter(flower => regex.test(flower.name))
-
         }
-        if(filterBy.price) {
+        if (filterBy.price) {
             flowers = flowers.filter(flower => flower.price > filterBy.price)
         }
-        // .then(flowers => {
-        //     if (filterBy.name) {
-        //         const regex = new RegExp(filterBy.name, 'i')
-        //         flowers = flowers.filter(flower => regex.test(flower.name))
-        //     }
-        // if (filterBy.minPrice) {
-        //     flowers = flowers.filter(flower => flower.listPrice.amount >= filterBy.minPrice)
-        // }
-        // if (filterBy.pageCount) {
-        //     flowers = flowers.filter(flower => flower.pageCount <= filterBy.pageCount)
-        // }
-        // if (filterBy.minYear) {
-        //     flowers = flowers.filter(flower => filterBy.minYear >= utilService.getYearsDistance(flower.publishedDate))
-        // }
-
+        if (sortBy.name) {
+            flowers = flowers.sort((a, b) => {
+                if (a.name < b.name) return -1;
+                if (a.name > b.name) return 1;
+                return 0;
+            });
+        }
         return flowers
-
-        // })
     }
 }
 
@@ -77,6 +67,10 @@ function getEmptyFlower(name = '') {
 
 function getDefaultFilter() {
     return { name: '', price: 29 }
+}
+
+function getDefaultSort() {
+    return { by: 'name', asc: true }
 }
 // function getDefaultFilter() {
 //     return { txt: '', minPrice: '', pageCount: '', minYear: '' }
