@@ -2,21 +2,14 @@
 
 export function CatalogueSort({ sort, onSetSort }: any) {
 
-    function handleSortChange(by: any) {
-        console.log(sort);
-        
-        const updatedSort = { ...sort, by }
+    function handleSortChange(by: string) {
+        const updatedSort = { ...sort, by, asc: !sort.asc }
         onSetSort(updatedSort)
     }
 
-    function handleDirectionChange() {
-        const updatedSort = { ...sort, asc: !sort.asc }
-        onSetSort(updatedSort)
-    }
 
     return <section>
-        <button onClick={() => handleSortChange('name')}>By name</button>
-        <button onClick={() => handleSortChange('price')}>By price</button>
-        <button onClick={handleDirectionChange}>Change direction {sort.asc ? '^' : 'v'}</button>
+        <button onClick={() => handleSortChange('name')}>By name {sort.asc ? '^' : 'v'}</button>
+        <button onClick={() => handleSortChange('price')}>By price {sort.asc ? '^' : 'v'}</button>
     </section>
 }

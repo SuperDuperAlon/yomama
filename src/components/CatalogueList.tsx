@@ -7,8 +7,6 @@ interface FlowerProps {
 }
 
 const CatalogueList = ({flowers}: FlowerProps) => {
-    console.log(flowers);
-    
 
     return (
         <>
