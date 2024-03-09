@@ -7,26 +7,24 @@ import Link from "next/link"
 
 import { appService } from '@/storage/appwrite'
 import { flowerService } from "@/services/flower.service"
-import { icons } from '@/styles/assets/icons/icons'
+
 
 import MainProductList_Card from '@/components/MainProductList_Card'
 
 import { useMediaQuery } from "@/lib/useMediaQuery"
+import CardFlower from "./CardFlower"
+
+
 
 const MainProductList = () => {
-    const [flowers, setFlowers] = useState<Flower[]>([])
-
-    // const screenSize = useMediaQuery()
+    const [flowers, setFlowers] = useState<Flower[]>()
 
     const numOfFlowers = 8
-    
-    // console.log(flowers);
-    
 
     useEffect(() => {
         async function loadFlowers() {
-            try {
-                const data = await flowerService.query()
+            try {   
+                const data = await flowerService.queryMain()
                 if (data) setFlowers(data)
             } catch (error) {
                 console.error('Error loading flowers:', error)
@@ -49,31 +47,10 @@ const MainProductList = () => {
                 <div className="main-slider">
                     {flowers.map((flower, idx) => {
                         if (idx < numOfFlowers) {
+                            console.log(flower)
                             return (
                                 <div key={idx}>
-                                    <Link href={`/catalogue/${flower.$id}`}>
-                                        <div className="main-slider__card">
-                                            <Image
-                                                src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
-                                                className=""
-                                                width={180}
-                                                height={120}
-                                                alt="flower name"
-                                                loading="lazy"
-                                            />
-                                            <div className="">
-                                                <div className="flex flex-col main-card-desc">
-                                                    <div className="capitalize">{flower.name}</div>
-                                                    <div className="align-bottom number">${flower.price}</div>
-
-                                                </div>
-                                                <div className="main-card-icons">
-                                                    <button className="round-btn">{icons.heartIcon}</button>
-                                                    <button className="round-btn">{icons.shoppingIcon}</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Link>
+                                    <CardFlower flower={flower} />
                                 </div>
                             )
                         }

@@ -1,8 +1,7 @@
 interface Flower{
-    $id: string;
-    $createdAt: string;
-    name?: string;
-    price?: number;
+    _id: string
+    name: string;
+    price: number;
 }
 
 interface User {
@@ -12,8 +11,11 @@ interface User {
 }
 
 interface FilterBy {
-    $id: string;
-    $createdAt: string;
     name: string;
     price: number;
+}
+
+interface SortBy {
+    by: string;
+    asc: boolean;
 }

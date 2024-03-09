@@ -7,7 +7,6 @@ import CatalogueList from "@/components/CatalogueList";
 import { flowerService } from "@/services/flower.service";
 import { CatalogueSort } from "@/components/CatalogueSort";
 
-
 const Catalogue = () => {
     const [flowers, setFlowers] = useState<Flower[]>([])
     const [filterBy, setFilterBy] = useState(flowerService.getDefaultFilter())
@@ -25,10 +24,10 @@ const Catalogue = () => {
         loadFlowers()
     }, [filterBy, sort])
 
-    function onSetFilter(filterBy: any): void {
+    function onSetFilter(filterBy: FilterBy): void {
         setFilterBy(filterBy);
     }
-    function onSetSort(sort: any) {
+    function onSetSort(sort: SortBy) {
         setSort(sort)
     }
 
