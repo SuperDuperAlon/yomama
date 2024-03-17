@@ -1,7 +1,7 @@
 interface Flower{
-    _id: string
+    _id?: string
     name: string;
-    price: number;
+    price?: number;
 }
 
 interface User {

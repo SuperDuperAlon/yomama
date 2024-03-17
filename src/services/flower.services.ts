@@ -11,7 +11,7 @@ export const flowerService = {
 async function query(filterBy: FilterBy, sortBy: SortBy) {
     if (typeof window === 'undefined' || !window.localStorage) return console.log('loading')
     else {
-        var flowers = storageService.loadFromStorage(STORAGE_KEY)
+        var flowers: Flower[] = storageService.loadFromStorage(STORAGE_KEY)
         if (filterBy.name) {
             const regex = new RegExp(filterBy.name, 'i')
             flowers = flowers.filter((flower: Flower) => regex.test(flower.name))
@@ -44,4 +44,47 @@ async function query(filterBy: FilterBy, sortBy: SortBy) {
 async function queryMain() {
     if (typeof window === 'undefined' || !window.localStorage) return console.log('loading')
     else return storageService.loadFromStorage(STORAGE_KEY)
+}
+
+function _createFlowers() {
+    if (typeof window !== 'undefined') {
+        var flowers: Flower[] = storageService.loadFromStorage(STORAGE_KEY)
+        if (!flowers || !flowers.length) {
+            flowers = [
+                { name: "Rose" },
+                { name: "Tulip" },
+                { name: "Daisy" },
+                { name: "Sunflower" },
+                { name: "Lily" },
+                { name: "Orchid" },
+                { name: "Daffodil" },
+                { name: "Carnation" },
+                { name: "Hydrangea" },
+                { name: "Peony" },
+                { name: "Poppy" },
+                { name: "Chrysanthemum" }
+
+            ]
+            flowers.forEach(flower => {
+                flower._id = _makeId()
+                flower.price = _makePrice()
+
+            })
+            storageService.saveToStorage(STORAGE_KEY, flowers)
+        }
+    }
+}
+
+function _makeId(length: number = 5) {
+    var text: string = ''
+    var possible: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    for (var i: number = 0; i < length; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length))
+    }
+    return text
+}
+
+function _makePrice() {
+    const price: number = Math.floor(Math.random() * 100)
+    return price
 }
