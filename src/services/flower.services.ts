@@ -28,7 +28,7 @@ async function query(filterBy: FilterBy, sortBy: SortBy) {
                 }
             });
         }
-        if (sortBy.by === 'price') {
+        if (sortBy.by === 'price' && flowers !== undefined) {
             flowers = flowers.sort((a: Flower, b: Flower) => {
                 if (sortBy.asc) {
                     return a.price - b.price;
@@ -50,26 +50,20 @@ function _createFlowers() {
     if (typeof window !== 'undefined') {
         var flowers: Flower[] = storageService.loadFromStorage(STORAGE_KEY)
         if (!flowers || !flowers.length) {
-            flowers = [
-                { name: "Rose" },
-                { name: "Tulip" },
-                { name: "Daisy" },
-                { name: "Sunflower" },
-                { name: "Lily" },
-                { name: "Orchid" },
-                { name: "Daffodil" },
-                { name: "Carnation" },
-                { name: "Hydrangea" },
-                { name: "Peony" },
-                { name: "Poppy" },
-                { name: "Chrysanthemum" }
+            const flowerNames: string[] = [
+                "Rose", "Sunflower", "Lily", "Tulip", "Daisy", "Orchid",
+                "Daffodil", "Peony", "Carnation", "Hydrangea", "Cherry Blossom", "Lavender"
+            ];
 
-            ]
-            flowers.forEach(flower => {
-                flower._id = _makeId()
-                flower.price = _makePrice()
+            flowerNames.forEach((name) => {
+                const flower: Flower = {
+                    name: name,
+                    _id: _makeId(5),
+                    price: _makePrice()
+                };
+                flowers.push(flower);
+            });
 
-            })
             storageService.saveToStorage(STORAGE_KEY, flowers)
         }
     }
