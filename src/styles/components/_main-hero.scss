@@ -74,38 +74,7 @@
     flex-direction: row;
     gap: 60px;
 
-    .main-slider__card {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-
-        >img {
-            height: 280px;
-            width: 210px;
-        }
-
-        :last-child {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding-bottom: 0.25rem;
-
-            >:first-child {
-                display: flex;
-                flex-direction: column;
-            }
-
-            >:last-child {
-                display: flex;
-                align-items: center;
-            }
-
-
-            >* {
-                gap: 0.25rem;
-            }
-        }
-    }
+   
 }
 
 @media (max-width: 687px) {
