@@ -14,22 +14,20 @@ const CardFlower = ({ flower }: Props) => {
 
     return (
         <>
-            <Link href={`/catalogue/${flower._id}`}>
-                <div className="main-slider__card">
-                    <ImageCmp />
-                    <div className="">
-                        <div className="flex flex-col main-card-desc">
-                            <div className="capitalize">{flower.name}</div>
-                            <div className="align-bottom number">${flower.price}</div>
+            <div className="main-slider__card">
+                <ImageCmp _id={flower._id}/>
+                <div className="">
+                    <div className="flex flex-col main-card-desc">
+                        <div className="capitalize">{flower.name}</div>
+                        <div className="align-bottom number">${flower.price}</div>
 
-                        </div>
-                        <div className="main-card-icons">
-                            <button className="round-btn">{icons.heartIcon}</button>
-                            <button className="round-btn">{icons.shoppingIcon}</button>
-                        </div>
+                    </div>
+                    <div className="main-card-icons">
+                        <button className="round-btn">{icons.heartIcon}</button>
+                        <button className="round-btn">{icons.shoppingIcon}</button>
                     </div>
                 </div>
-            </Link>
+            </div>
         </>
 
     )

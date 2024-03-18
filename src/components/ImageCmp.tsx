@@ -1,17 +1,25 @@
 import Image from 'next/image'
-import React from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router';
 
-const ImageCmp = () => {
+interface Props {
+    _id: string
+}
+
+const ImageCmp = ({ _id }: Props) => {
+
     return (
         <>
-            <Image
-                src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
-                className=""
-                width={180}
-                height={120}
-                alt="flower name"
-                loading="lazy"
-            />
+            <Link href={`/catalogue/${_id}`}>
+                <Image
+                    src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
+                    className=""
+                    width={180}
+                    height={120}
+                    alt="flower name"
+                    loading="lazy"
+                />
+            </Link>
         </>
     )
 }
