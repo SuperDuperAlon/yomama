@@ -31,13 +31,15 @@ const Catalogue = () => {
         setSort(sort)
     }
 
-    if (!flowers) return <div>There are no flowers</div>
+    if (!flowers) return <section>There are no flowers</section>
     else return (
-        <>
-            <CatalogueFilter onSetFilter={onSetFilter} />
-            <CatalogueSort sort={sort} onSetSort={onSetSort} />
+        <section>
+            <div className="catalogue-header">
+                <CatalogueFilter onSetFilter={onSetFilter} />
+                <CatalogueSort sort={sort} onSetSort={onSetSort} />
+            </div>
             <CatalogueList flowers={flowers} />
-        </>
+        </section>
     )
 }
 

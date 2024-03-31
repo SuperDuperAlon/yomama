@@ -8,8 +8,8 @@ export function CatalogueSort({ sort, onSetSort }: any) {
     }
 
 
-    return <section>
+    return <div>
         <button onClick={() => handleSortChange('name')}>By name {sort.asc ? '^' : 'v'}</button>
         <button onClick={() => handleSortChange('price')}>By price {sort.asc ? '^' : 'v'}</button>
-    </section>
+    </div>
 }

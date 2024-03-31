@@ -37,7 +37,7 @@ const CatalogueFilter = ({ onSetFilter, onSetSort }: any) => {
   }
 
   return (
-    <section>
+    <>
       <div className="flower-list-filter">
         <form onSubmit={onSubmitFilter}>
           <label htmlFor='name'>Name:</label>
@@ -63,7 +63,7 @@ const CatalogueFilter = ({ onSetFilter, onSetSort }: any) => {
           />
         </form>
       </div>
-    </section >
+    </ >
   )
 }
 
