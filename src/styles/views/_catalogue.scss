@@ -3,3 +3,8 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
+
+.catalogue-header {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,14 +1,19 @@
 // Section 1 - Hero
 
 .hero {
-    min-height: 75vh;
+    min-height: 90vh;
+    // grid-row: 2 / -1;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero-img {
+    // flex: 1;
     background-image: url('/images/hero-image.jpg');
     min-height: inherit;
     background-size: cover;
     background-repeat: no-repeat;
+
 
     >* {
         font-family: 'cinzel';
