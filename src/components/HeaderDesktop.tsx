@@ -16,7 +16,19 @@ function HeaderDesktop() {
     <header className='index-layout'>
       <section className='top-header'>
         <button className="logo-btn">Yomama</button>
-        <HeaderFilter />
+        {/* <HeaderFilter /> */}
+
+        <div className='central-nav'>
+        <ul className=''>
+          {headerLinks.map((link, idx) => (
+            <li key={idx}>
+              <Link href='/'>
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
 
         <div className='header-nav'>
           <div>
@@ -43,17 +55,7 @@ function HeaderDesktop() {
         </div>
       </section>
       <div className='header-break full'></div>
-      <div className='bottom-header'>
-        <ul className=''>
-          {headerLinks.map((link, idx) => (
-            <li key={idx}>
-              <Link href='/'>
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+
     </header>
   )
 }
