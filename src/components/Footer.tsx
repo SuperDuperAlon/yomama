@@ -2,6 +2,9 @@ import { arrays } from "@/lib/arrays"
 
 function Footer() {
 
+// TODO: keep footer glued to the bottom of the page
+
+
   const { footerContact, footerSocialIcons, footerInfo } = arrays
 
   return (
