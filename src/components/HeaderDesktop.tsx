@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { icons } from '@/styles/assets/icons/icons'
 import { arrays } from '@/lib/arrays'
 
-import HeaderFilter from './HeaderFilter'
 import { flowerService } from '@/services/flower.service';
 import { useState } from 'react';
 import { appService } from '@/storage/appwrite';
@@ -16,13 +15,12 @@ function HeaderDesktop() {
     <header className='index-layout'>
       <section className='top-header'>
         <button className="logo-btn">Yomama</button>
-        {/* <HeaderFilter /> */}
 
         <div className='central-nav'>
         <ul className=''>
           {headerLinks.map((link, idx) => (
             <li key={idx}>
-              <Link href='/'>
+              <Link href={link.path}>
                 {link.name}
               </Link>
             </li>

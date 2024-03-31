@@ -8,10 +8,10 @@ import { GrLinkedinOption } from 'react-icons/gr'
 import { FiGithub } from 'react-icons/fi'
 
 const headerLinks = [
-  { name: 'Products' },
-  { name: 'About' },
-  { name: 'Workshop' },
-  { name: 'Contact' }
+  { name: 'Home', path: '/' },
+  { name: 'Products', path: '/catalogue' },
+  { name: 'About', path: '/about' },
+  { name: 'Contact', path: '/contact' },
 ]
 
 interface IconsType {
