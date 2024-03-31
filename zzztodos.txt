@@ -1,9 +1,0 @@
-* Catalogue Component
-* homepage responsive
-* header filter
-* flower list page
-* set authentication
-* Calculate header size
-* Create slider buttons for cards
-* Card Component
-* Add links to the header
