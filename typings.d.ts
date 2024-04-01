@@ -5,9 +5,10 @@ interface Flower{
 }
 
 interface User {
-    email?: string;
+    email: string;
     password: string;
     username: string;
+    userId: string
 }
 
 interface FilterBy {
