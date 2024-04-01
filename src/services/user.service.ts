@@ -22,7 +22,7 @@ function signUp(username: string, password: string, email: string): void {
   _saveUsersToStorage(users)
   console.log(`User ${username} signed up successfully!`);
 }
-
+{/* TODO: login and connect to local storage */}
 function login(email: string, password: string): void {
   const user = users.find(u => u.email === email && u.password === password);
   if (user) {
@@ -33,6 +33,7 @@ function login(email: string, password: string): void {
   }
 }
 
+{/* TODO: logout and connect to local storage */}
 function logout(): void {
   if (currentUser) {
     console.log(`User ${currentUser.username} logged out successfully!`);
