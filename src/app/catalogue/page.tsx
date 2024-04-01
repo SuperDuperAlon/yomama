@@ -33,7 +33,7 @@ const Catalogue = () => {
 
     if (!flowers) return <section>There are no flowers</section>
     else return (
-        <section>
+        <section className="catalogue">
             <div className="catalogue-header">
                 <CatalogueFilter onSetFilter={onSetFilter} />
                 <CatalogueSort sort={sort} onSetSort={onSetSort} />

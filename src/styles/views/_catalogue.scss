@@ -1,7 +1,13 @@
+.catalogue {
+    padding: 10px 0;
+}
+
 .flower-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns:
+    minmax(180px, max-content)
+    repeat(auto-fill, 200px) 20%;
+    gap: 20px;
 }
 
 .catalogue-header {
