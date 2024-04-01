@@ -14,20 +14,28 @@ function HeaderDesktop() {
   return (
     <header className='index-layout'>
       <section className='top-header'>
-        <button className="logo-btn">Yomama</button>
+        {/* TODO: Turn this to cmp */}
+        <button className="logo-btn">
+          <Link href='/'>
+            Yomama
+          </Link>
+        </button>
 
+        {/* TODO: Turn this to cmp */}
         <div className='central-nav'>
-        <ul className=''>
-          {headerLinks.map((link, idx) => (
-            <li key={idx}>
-              <Link href={link.path}>
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+          <ul className=''>
+            {headerLinks.map((link, idx) => (
+              <li key={idx}>
+                <Link href={link.path}>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
+
+        {/* TODO: Turn this to cmp */}
         <div className='header-nav'>
           <div>
             <button className='round-btn'>
