@@ -4,8 +4,7 @@ _createFlowers()
 const STORAGE_KEY: string = 'flowerDB'
 
 export const flowerService = {
-    query,
-    queryMain
+    query
 }
 
 async function query(filterBy: FilterBy, sortBy: SortBy) {
@@ -39,11 +38,6 @@ async function query(filterBy: FilterBy, sortBy: SortBy) {
         }
         return flowers
     }
-}
-
-async function queryMain() {
-    if (typeof window === 'undefined' || !window.localStorage) return console.log('loading')
-    else return storageService.loadFromStorage(STORAGE_KEY)
 }
 
 function _createFlowers() {
