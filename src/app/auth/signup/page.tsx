@@ -1,8 +1,10 @@
+
+import SignUpCmp from '@/components/auth/SignUpCmp'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <><SignUpCmp /></>
   )
 }
 
