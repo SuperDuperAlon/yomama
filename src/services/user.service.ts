@@ -11,20 +11,23 @@ export const userService = {
   logout
 }
 
-function signUp(username: string, password: string, email: string): void {
+function signUp(username: string, email: string, password: string): void {
   const userExists = users.some(user => user.email === email);
   if (userExists) {
     console.log(`User ${username} already exists.`);
-  } 
+  }
 
   const newUser: User = { username, password, email, userId: _makeId() };
   users.push(newUser);
   _saveUsersToStorage(users)
   console.log(`User ${username} signed up successfully!`);
+
 }
-{/* TODO: login and connect to local storage */}
+{/* TODO: login and connect to local storage */ }
+
 function login(email: string, password: string): void {
-  const user = users.find(u => u.email === email && u.password === password);
+  const storedUsers = storageService.loadFromStorage(STORAGE_KEY);
+  const user = storedUsers?.find((u: User) => u.email === email && u.password === password);
   if (user) {
     currentUser = user;
     console.log(`User ${email} logged in successfully!`);
@@ -33,7 +36,8 @@ function login(email: string, password: string): void {
   }
 }
 
-{/* TODO: logout and connect to local storage */}
+
+{/* TODO: logout and connect to local storage */ }
 function logout(): void {
   if (currentUser) {
     console.log(`User ${currentUser.username} logged out successfully!`);
@@ -55,7 +59,7 @@ function _makeId(length: number = 5) {
   var text: string = ''
   var possible: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
   for (var i: number = 0; i < length; i++) {
-      text += possible.charAt(Math.floor(Math.random() * possible.length))
+    text += possible.charAt(Math.floor(Math.random() * possible.length))
   }
   return text
 }

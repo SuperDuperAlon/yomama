@@ -11,7 +11,10 @@ const SignUpCmp: React.FC = () => {
 
     const handleSignUp = (e: React.FormEvent) => {
         e.preventDefault();
+        console.log(username, email, password);
+        
         userService.signUp(username, email, password)
+
     };
 
     return (
