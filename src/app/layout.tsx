@@ -1,9 +1,5 @@
 import { Suspense } from 'react'
 
-import ReactDOM from 'react-dom/client'
-import { Provider } from 'react-redux'
-// import store from './store'
-
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Loading from '@/components/Loading'
@@ -23,7 +19,6 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      {/* <Provider store={store}> */}
         <body className=''>
           <Suspense fallback={<Loading />}>
             <Header />
@@ -35,7 +30,6 @@ export default function RootLayout({
             <Footer />
           </Suspense>
         </body>
-      {/* </Provider> */}
     </html>
   )
 }

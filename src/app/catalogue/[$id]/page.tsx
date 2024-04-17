@@ -1,9 +1,18 @@
-import React from 'react'
+'use client'
+import { useRouter } from 'next/router';
 
-const page = () => {
+function MyPage() {
+  const router = useRouter();
+  console.log(router);
+  
+  const { id } = router.query;
+
   return (
-    <div>page</div>
-  )
+    <div>
+      <h3>test</h3>
+      <h2>ID: {id}</h2>
+    </div>
+  );
 }
 
-export default page
+export default MyPage;
