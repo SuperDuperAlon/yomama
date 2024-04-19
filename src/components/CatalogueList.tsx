@@ -11,7 +11,7 @@ const CatalogueList = ({flowers}: FlowerProps) => {
             <div className="flower-list">
                 {flowers.map((flower, idx) => {
                     return (
-                        <div className='catalogue__card-list' key={idx}>
+                        <div className='catalogue__card_list' key={idx}>
                             <CardFlower flower={flower} />
                         </div>
                     )

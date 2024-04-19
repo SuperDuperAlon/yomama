@@ -1,10 +1,15 @@
 'use client'
+import ImageCmp from '@/components/ImageCmp';
 import Loading from '@/components/Loading';
 import { flowerService } from '@/services/flower.service';
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react';
 
 function FlowerDetails() {
+
+  interface Props {
+    _id: string
+  }
 
   const pathname = usePathname()?.slice(-5)
   const [flower, setFlower] = useState<Flower | null>(null);
@@ -15,9 +20,7 @@ function FlowerDetails() {
       setFlower(flower);
     };
     fetchFlower();
-  }, []);
-
-  console.log(flower);
+  }, [])
 
 
   if (!flower) {
@@ -25,12 +28,21 @@ function FlowerDetails() {
   }
   return (
 
-      <div>
-        <h3>test</h3>
-        <h2>ID: {pathname}</h2>
-        <h2>ID: {flower._id}</h2>
-        <h2>ID: {flower.name}</h2>
+    <section className='flower_details_view'>
+      <div className=''>
+        <ImageCmp _id={flower._id} width={240} height={320} />
       </div>
+      <div>
+        <div className='flower_details'>
+          <div>{flower.name}</div>
+          <div>${flower.price}</div>
+        </div>
+        <div>
+          <button>Add to cart</button>
+          <button>Buy Now</button>
+        </div>
+      </div>
+    </section>
   );
 
 }

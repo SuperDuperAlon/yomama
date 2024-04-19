@@ -1,4 +1,9 @@
-.catalogue__card-list {
+.catalogue__card_list {
     display: flex;
     flex-direction: row;
+    > img {
+        width: 100%; 
+        height: 100%;
+        object-fit: cover; 
+    }
 }

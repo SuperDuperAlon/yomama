@@ -15,7 +15,9 @@ const CardFlower = ({ flower }: Props) => {
     return (
         <>
             <div className="main-slider__card">
-                <ImageCmp _id={flower._id}/>
+                <Link href={`/catalogue/${flower._id}`}>
+                    <ImageCmp _id={flower._id} height={320} width={240} />
+                </Link>
                 <div className="">
                     <div className="flex flex-col main-card-desc">
                         <div className="capitalize">{flower.name}</div>
