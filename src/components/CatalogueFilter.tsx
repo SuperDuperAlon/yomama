@@ -2,7 +2,7 @@
 import { flowerService } from '@/services/flower.service';
 import React, { FormEvent, useEffect, useRef, useState } from 'react'
 
-const CatalogueFilter = ({ onSetFilter, onSetSort }: any) => {
+const CatalogueFilter = ({ onSetFilter }: any) => {
 
   const [filterByToEdit, setFilterByToEdit] = useState(
     flowerService.getDefaultFilter()
