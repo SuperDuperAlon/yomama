@@ -1,14 +1,11 @@
-import { appService } from '@/storage/appwrite';
-import React, { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
 
-// interface FilterProps {
-//   onFilterChange: (filterOption: any) => void;
-// }
+import { flowerService } from '@/services/flower.service';
+import React, { FormEvent, useEffect, useRef, useState } from 'react'
 
 const CatalogueFilter = ({ onSetFilter, onSetSort }: any) => {
 
   const [filterByToEdit, setFilterByToEdit] = useState(
-    appService.getDefaultFilter()
+    flowerService.getDefaultFilter()
   );
   const elInputRef = useRef<HTMLInputElement | null>(null)
 

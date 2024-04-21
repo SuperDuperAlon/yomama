@@ -82,8 +82,8 @@ function getEmptyFlower(name = '') {
 // }
 
 function getDefaultFilter() {
-    return { name: '', price: 29 }
-}
+    return { name: '', price: 0 }
+  }
 
 function getDefaultSort() {
     return { by: '', asc: true }
