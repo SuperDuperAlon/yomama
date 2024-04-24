@@ -17,10 +17,6 @@ const CatalogueFilter = ({ onSetFilter }: any) => {
     onSetFilter(filterByToEdit);
   }, [filterByToEdit]);
 
-  useEffect(() => {
-    onSetFilter(filterByToEdit);
-  }, [filterByToEdit]);
-
   function handleChange({ target }: any) {
     let { value, name: field, type } = target;
     value = type === "range" ? +value : value;
@@ -60,7 +56,7 @@ const CatalogueFilter = ({ onSetFilter }: any) => {
           />
         </form>
       </div>
-    </ >
+    </>
   )
 }
 
