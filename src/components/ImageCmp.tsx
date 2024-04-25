@@ -6,18 +6,19 @@ interface Props {
     height: number
 }
 
-const ImageCmp = ({ _id, width, height}: Props) => {
+const ImageCmp = ({ _id, width, height }: Props) => {
 
     return (
         <>
             <Image
                 src='/images/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.avif'
-                className=""
+                alt="flower name"
                 width={`${width}`}
                 height={`${height}`}
-                alt="flower name"
+                style={{
+                    objectFit: 'contain',
+                }}
                 loading="lazy"
-                layout='responsive'
             />
         </>
     )
